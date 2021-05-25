@@ -13,6 +13,9 @@ const Navigation = () => {
       <li>
         <Link to="/meistä"> Meistä </Link>
       </li>
+      <li>
+        <Link to="/LisääTuote"> Lisää tuote </Link>
+      </li>
     </ul>
   );
 };
