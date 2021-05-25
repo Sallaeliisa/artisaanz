@@ -5,7 +5,7 @@ const SearchBox = (props) => {
   return (
     <div className="searchBox">
       <Form inline>
-      <Form.Control type="text" placeholder="Etsi tuotetta" className="mr-sm-2" onChange={props.search} />
+      <Form.Control type="text" placeholder="Hae tuotteen tai tekijän nimellä" className="mr-sm-2" onChange={props.search} />
       </Form>
     </div>
   );
