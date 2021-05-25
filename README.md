@@ -7,7 +7,7 @@ This is group work we are doing for school project. Members in our group are Lau
 - npm install
 - npm install react-router-dom
 - npm install axios
-- npm install bootstrap
+- npm install react-bootstrap bootstrap
 - npm install react-router-bootstrap
 
 ### More information about project will be added shortly
