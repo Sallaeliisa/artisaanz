@@ -9,5 +9,6 @@ This is group work we are doing for school project. Members in our group are Lau
 - npm install axios
 - npm install react-bootstrap bootstrap
 - npm install react-router-bootstrap
+- npm install json-server --save-dev
 
 ### More information about project will be added shortly
