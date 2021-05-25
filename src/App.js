@@ -17,3 +17,7 @@ function App() {
 }
 
 export default App;
+/* 
+import SearchBoxDropdown from "../Components/SearchBoxDropdown";
+<SearchBoxDropdown />;
+ */
