@@ -1,59 +1,70 @@
-{ 
-    "tuotteet": [
-      {
-        "id": 1,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/P3270516.JPG"],
-        "nimi": "Kolikkopussukka",
-        "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Koko 9cm x 12cm",
-        "hinta": "10€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "Pussukka"
-      },
-      {
-        "id": 2,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/P3270542.JPG"],
-        "nimi": "Kolikkopussukka",
-        "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Hihna mukana. Koko 13cm x 20cm",
-        "hinta": "16€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "Pussukka"
-      },
-      {
-        "id": 3,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/P3280600.JPG"],
-        "nimi": "Käsilaukku",
-        "kuvaus": "Käsilaukku. Hihna mukana. Koko 22cm x 24cm",
-        "hinta": "30€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "laukut"
-      },
-      {
-        "id": 4,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/P3280617.JPG"],
-        "nimi": "Käsilaukku",
-        "kuvaus": "Käsilaukku Marimekon Unikko-kuviolla. Hihna mukana. Koko 25cm x 29cm",
-        "hinta": "35€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "laukut"
-      },
-      {
-        "id": 5,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/P3310634.JPG"],
-        "nimi": "Käsilaukku",
-        "kuvaus": "Käsilaukku. Hihna mukana. Koko 18cm x 21cm",
-        "hinta": "25€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "laukut"
-      },
-      {
-        "id": 5,
-        "kuva": ["https://public.bc.fi/s2100154/Kuvat/PB170422.JPG"],
-        "nimi": "Kangaskassi",
-        "kuvaus": "Kangaskassi, jossa on sisätasku, sekä avainlenkki. Koko 45cm x 47cm",
-        "hinta": "10€",
-        "tekijä": "Riitta Järventie",
-        "kategoria": "laukut"
-      }
-    ]
-  }
-  
+{
+  "tuotteet": [
+    {
+      "id": 1,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/P3270516.JPG"
+      ],
+      "nimi": "Kolikkopussukka",
+      "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Koko 9cm x 12cm",
+      "hinta": "10€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "Pussukka"
+    },
+    {
+      "id": 2,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/P3270542.JPG"
+      ],
+      "nimi": "Kolikkopussukka",
+      "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Hihna mukana. Koko 13cm x 20cm",
+      "hinta": "16€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "Pussukka"
+    },
+    {
+      "id": 3,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/P3280600.JPG"
+      ],
+      "nimi": "Käsilaukku",
+      "kuvaus": "Käsilaukku. Hihna mukana. Koko 22cm x 24cm",
+      "hinta": "30€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "laukut"
+    },
+    {
+      "id": 4,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/P3280617.JPG"
+      ],
+      "nimi": "Käsilaukku",
+      "kuvaus": "Käsilaukku Marimekon Unikko-kuviolla. Hihna mukana. Koko 25cm x 29cm",
+      "hinta": "35€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "laukut"
+    },
+    {
+      "id": 5,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/P3310634.JPG"
+      ],
+      "nimi": "Käsilaukku",
+      "kuvaus": "Käsilaukku. Hihna mukana. Koko 18cm x 21cm",
+      "hinta": "25€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "laukut"
+    },
+    {
+      "id": 5,
+      "kuva": [
+        "https://public.bc.fi/s2100154/Kuvat/PB170422.JPG"
+      ],
+      "nimi": "Kangaskassi",
+      "kuvaus": "Kangaskassi, jossa on sisätasku, sekä avainlenkki. Koko 45cm x 47cm",
+      "hinta": "10€",
+      "tekijä": "Riitta Järventie",
+      "kategoria": "laukut"
+    }
+  ]
+}
