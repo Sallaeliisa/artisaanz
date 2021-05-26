@@ -37,6 +37,7 @@ class Products extends Component {
 
     const filteredProducts = productFilter.map((tuote) => {
       return (
+        <div className="products">
         <ProductCard
           id={tuote.id}
           key={tuote.id}
@@ -46,6 +47,7 @@ class Products extends Component {
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
+        </div>
       );
     });
 
