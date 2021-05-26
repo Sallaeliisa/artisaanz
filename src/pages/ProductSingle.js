@@ -24,13 +24,11 @@ const ProductSingle = () => {
     tuoteData = (
       <div className="singleProduct">
         <ul>
-          {tuotteet.kuva.map((item) => {
+          {tuotteet.kuva.map((item, i) => {
             return (
-              <img
-                src={item}
-                alt="tuotteen kuva"
-                key={tuotteet.kuva.indexOf(item)}
-              />
+              <ul key={i}>
+                <img src={item.kuva} alt="tuotteen kuva" />
+              </ul>
             );
           })}
         </ul>
