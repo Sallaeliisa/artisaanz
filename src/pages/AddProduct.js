@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import "../App.css";
+
 const AddProduct = () => {
   const [data, setData] = useState({
     kuva: [],
@@ -42,7 +44,7 @@ const AddProduct = () => {
   };
 
   return (
-    <Form onSubmit={submitData}>
+    <Form onSubmit={submitData} className="form">
       <Form.Group>
         <Form.Label htmlFor="">Tuote:</Form.Label>
         <Form.Control

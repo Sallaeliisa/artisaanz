@@ -10,10 +10,18 @@ html {
   scroll-behavior: smooth;
 }
 
-.logo {
-  width: 100px;
-}
-
 .App {
   text-align: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.form {
+  padding: 20px;
+  margin: 0 auto;
+  width: 800px;
 }

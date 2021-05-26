@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ProductCard from "../Components/ProductCard";
 import SearchBox from "../Components/SearchBox";
-import ProductSingle from "./ProductSingle"
+import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
 import "../Components/Products.css";
 
@@ -37,16 +37,16 @@ class Products extends Component {
 
     const filteredProducts = productFilter.map((tuote) => {
       return (
-        <div className="products">
-        <ProductCard
-          id={tuote.id}
-          key={tuote.id}
-          kuva={tuote.kuva}
-          nimi={tuote.nimi}
-          tekijä={tuote.tekijä}
-          hinta={tuote.hinta}
-          kategoria={tuote.kategoria}
-        />
+        <div>
+          <ProductCard
+            id={tuote.id}
+            key={tuote.id}
+            kuva={tuote.kuva}
+            nimi={tuote.nimi}
+            tekijä={tuote.tekijä}
+            hinta={tuote.hinta}
+            kategoria={tuote.kategoria}
+          />
         </div>
       );
     });
@@ -54,13 +54,13 @@ class Products extends Component {
     return (
       <section id="products">
         <Switch>
-        <Route path="/tuotteet/:id">
+          <Route path="/tuotteet/:id">
             <ProductSingle />
           </Route>
-        <Route path="/tuotteet" exact>
-        <SearchBox search={this.searchValueHandler} />
-        <div className="filteredProducts">{filteredProducts}</div>
-        </Route>
+          <Route path="/tuotteet" exact>
+            <SearchBox search={this.searchValueHandler} />
+            <div className="filteredProducts">{filteredProducts}</div>
+          </Route>
         </Switch>
       </section>
     );
