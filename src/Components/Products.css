@@ -1,3 +1,15 @@
 .filteredProducts img {
   height: 200px;
 }
+.productCard {
+  border-radius: 5px;
+  background-color: aqua;
+  box-shadow: 0 0 5px #222121;
+  padding: 1rem;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
