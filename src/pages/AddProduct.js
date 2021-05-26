@@ -12,7 +12,6 @@ const AddProduct = () => {
     kuvaus: "",
     hinta: "",
     tekijä: "",
-    recipeCategory: "Pussukka",
   });
 
   const [kuvat, setKuvat] = useState([{ id: 1 }]);
