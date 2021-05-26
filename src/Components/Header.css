@@ -14,3 +14,11 @@ header nav ul li {
   padding: 0 1rem;
   justify-content: flex-end;
 }
+header a {
+  text-decoration: none;
+  color: #0d0d0d;
+}
+
+header a:hover {
+  color: #c36b85;
+}
