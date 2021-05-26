@@ -37,16 +37,16 @@ class Products extends Component {
 
     const filteredProducts = productFilter.map((tuote) => {
       return (
-        <div className="products">
-        <ProductCard
-          id={tuote.id}
-          key={tuote.id}
-          kuva={tuote.kuva}
-          nimi={tuote.nimi}
-          tekijä={tuote.tekijä}
-          hinta={tuote.hinta}
-          kategoria={tuote.kategoria}
-        />
+        <div>
+          <ProductCard
+            id={tuote.id}
+            key={tuote.id}
+            kuva={tuote.kuva}
+            nimi={tuote.nimi}
+            tekijä={tuote.tekijä}
+            hinta={tuote.hinta}
+            kategoria={tuote.kategoria}
+          />
         </div>
       );
     });
