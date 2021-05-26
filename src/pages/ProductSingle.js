@@ -36,7 +36,7 @@ const ProductSingle = () => {
         </ul>
         <h1>{tuotteet.nimi}</h1>
         <p>{tuotteet.kuvaus}</p>
-        <p>Tekijä: {tuotteet.tekijä}</p>
+        <p>Artisaani: {tuotteet.tekijä}</p>
         <p>Hinta: {tuotteet.hinta}</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
       </div>
