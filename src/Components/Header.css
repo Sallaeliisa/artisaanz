@@ -18,7 +18,8 @@ header a {
 }
 
 header a:hover {
-  color: #c36b85;
+  color: #4f5b3e;
+  font-weight: 600;
 }
 
 .logo {
