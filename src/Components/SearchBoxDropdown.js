@@ -23,8 +23,3 @@ const SearchBoxDropdown = ({ search }) => {
 };
 
 export default SearchBoxDropdown;
-
-/* 
-import SearchBoxDropdown from "../Components/SearchBoxDropdown";
-<SearchBoxDropdown />;
- */
