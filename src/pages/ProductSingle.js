@@ -41,10 +41,12 @@ const ProductSingle = () => {
     );
   }
   return (
-    <div>
+    <section>
       {tuoteData}
-      <button onClick={() => history.goBack()}>Takaisin</button>
-    </div>
+      <button className="backbtn" onClick={() => history.goBack()}>
+        Takaisin
+      </button>
+    </section>
   );
 };
 

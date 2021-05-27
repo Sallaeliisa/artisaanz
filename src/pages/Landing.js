@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
+import herobanner from "../assets/herobanner.svg";
 
 const Landing = () => {
-    return (
-        <div>
-            <h1>Welcome Artisaanz!</h1>
-        </div>
-    );
+  return (
+    <section>
+      <div className="herobanner-cont">
+        <img className="herobanner" src={herobanner} alt="herobanner img" />
+      </div>
+    </section>
+  );
 };
 
 export default Landing;
