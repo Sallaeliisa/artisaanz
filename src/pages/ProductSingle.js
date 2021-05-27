@@ -18,20 +18,15 @@ const ProductSingle = () => {
     }
   });
 
-  let tuoteData = undefined;
+  let productData = undefined;
+  let mainImage = undefined;
+  let moreImages = undefined;
 
   if (tuotteet) {
-    tuoteData = (
+    
+    productData = (
+
       <div className="singleProduct">
-        <ul>
-          {tuotteet.kuva.map((item, i) => {
-            return (
-              <ul key={i}>
-                <img src={item.kuva} alt="tuotteen kuva" />
-              </ul>
-            );
-          })}
-        </ul>
         <h1>{tuotteet.nimi}</h1>
         <p>{tuotteet.kuvaus}</p>
         <p>Artisaani: {tuotteet.tekijä}</p>
@@ -39,10 +34,33 @@ const ProductSingle = () => {
         <p>Kategoria: {tuotteet.kategoria}</p>
       </div>
     );
+
+    mainImage = (
+      <div className="mainImage">
+        <img src={tuotteet.kuva[0].kuva} alt="tuotteen kuva" />
+      </div>
+    );
+
+    moreImages = (
+      <div className="moreImages">
+        <ul>
+          {tuotteet.kuva.map((item, i) => {
+            return (
+              <ul key={i}>
+                <button><img src={item.kuva} alt="tuotteen kuva" /></button>
+              </ul>
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
+
   return (
     <div>
-      {tuoteData}
+      {mainImage}
+      {moreImages}
+      {productData}
       <button onClick={() => history.goBack()}>Takaisin</button>
     </div>
   );

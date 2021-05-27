@@ -1,5 +1,9 @@
 /* CSS, joka on nopeasti kyhätty yksittäisen tuotesivun tekoa helpottamaan. Voi muokata tai poistaa muun stailauksen yhteydessä, jos on tarpeeton */
 
-.singleProduct img {
-    height: 20vh;
+.mainImage img {
+    height: 40vh;
+}
+
+.moreImages img {
+    height: 10vh;
 }
