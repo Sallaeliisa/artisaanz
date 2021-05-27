@@ -5,11 +5,14 @@ import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
+import Spinner from "react-bootstrap/Spinner";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 
 const Products = () => {
   const [tuotteet, setTuotteet] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+  const [loading, setLoading] = useState(false);
+
   const productFilter = tuotteet.filter((tuote) => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
@@ -20,7 +23,9 @@ const Products = () => {
   useEffect(() => {
     axios
       .get("http://localhost:3001/tuotteet")
+      .then(setLoading(true))
       .then((resp) => setTuotteet(resp.data));
+    setLoading(true);
   }, []);
 
   const searchValueHandler = (e) => {
@@ -53,6 +58,13 @@ const Products = () => {
           <SearchBoxDropdown />
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
+          {loading === false && (
+            <Spinner
+              className="productSpinner"
+              animation="border"
+              variant="secondary"
+            />
+          )}
         </Route>
       </Switch>
     </section>
