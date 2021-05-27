@@ -1,16 +1,20 @@
 import React from "react";
 import Navigation from "./Navigation";
+import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import Navbar from "react-bootstrap/Navbar";
 import "./Header.css";
 
 const Header = () => {
   return (
-    <div className="header">
-      <Link to="/" exact>
-        <h2>Logo</h2>
-      </Link>
+    <header>
+      <Navbar bg="light" expand="lg" fixed="top">
+        <Link to="/" exact>
+          <img className="logo" src={logo} alt="logo" />
+        </Link>
+      </Navbar>
       <Navigation />
-    </div>
+    </header>
   );
 };
 

@@ -1,3 +1,25 @@
-.filteredProducts img {
-    height: 200px;
+.productCard img {
+  height: 200px;
+  border-radius: 5px;
+}
+.productCard {
+  border-radius: 5px;
+  background-color: #fffefb;
+  box-shadow: 0 0 5px #222121;
+  height: 400px;
+  width: 300px;
+  margin: 2rem 1rem;
+  padding: 1rem;
+}
+
+.productCard a {
+  text-decoration: none;
+  color: #0d0d0d;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.productCard a:hover {
+  color: #778563;
+  text-decoration: underline;
 }

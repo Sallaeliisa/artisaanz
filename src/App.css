@@ -1,6 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=EB+Garamond&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 .App {
   text-align: center;
 }
 
+input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+}
 
+.form {
+  padding: 20px;
+  margin: 0 auto;
+  width: 800px;
+}
 
+.productSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.herobanner {
+  width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.herobanner-cont {
+  border-top: 1px solid #d9dadf;
+  border-bottom: 1px solid #d9dadf;
+  background-color: #f6f4f4;
+}

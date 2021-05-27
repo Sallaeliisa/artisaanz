@@ -1,0 +1,23 @@
+/* CSS, joka on nopeasti kyhätty yksittäisen tuotesivun tekoa helpottamaan. Voi muokata tai poistaa muun stailauksen yhteydessä, jos on tarpeeton */
+
+.singleProduct img {
+  height: 30%;
+  width: 25%;
+  float: left;
+  padding: 20px;
+}
+
+.singleProduct {
+  padding: 30px 70px;
+}
+
+.backbtn {
+  height: 40px;
+  width: 200px;
+  background-color: #4f5b3e;
+  outline: 5px solid #4f5b3e;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+}

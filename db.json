@@ -1,70 +1,128 @@
 {
   "tuotteet": [
     {
-      "id": 1,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/P3270516.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/P3270516.JPG"
+        }
       ],
       "nimi": "Kolikkopussukka",
-      "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Koko 9cm x 12cm",
+      "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Koko 9cm x 12cm.",
       "hinta": "10€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "Pussukka"
+      "kategoria": "Pussukat",
+      "id": 10
     },
     {
-      "id": 2,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/P3270542.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/P3270542.JPG"
+        }
       ],
-      "nimi": "Kolikkopussukka",
-      "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Hihna mukana. Koko 13cm x 20cm",
+      "nimi": "Kännykkäpussukka",
+      "kuvaus": "Kätevä pussukka kaiken kokosille kännyköille kun tarvitset kädet vapaaksi. Hihna mukana. Koko 13cm x 20cm",
       "hinta": "16€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "Pussukka"
+      "kategoria": "Pussukat",
+      "id": 11
     },
     {
-      "id": 3,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/P3280600.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/P3280600.JPG"
+        }
       ],
       "nimi": "Käsilaukku",
-      "kuvaus": "Käsilaukku. Hihna mukana. Koko 22cm x 24cm",
+      "kuvaus": "Käsilaukku. Hihna mukana. Koko 22cm x 24cm\"",
       "hinta": "30€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "laukut"
+      "kategoria": "Laukut",
+      "id": 12
     },
     {
-      "id": 4,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/P3280617.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/P3280617.JPG"
+        }
       ],
       "nimi": "Käsilaukku",
       "kuvaus": "Käsilaukku Marimekon Unikko-kuviolla. Hihna mukana. Koko 25cm x 29cm",
       "hinta": "35€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "laukut"
+      "kategoria": "Laukut",
+      "id": 13
     },
     {
-      "id": 5,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/P3310634.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/P3310634.JPG"
+        }
       ],
       "nimi": "Käsilaukku",
       "kuvaus": "Käsilaukku. Hihna mukana. Koko 18cm x 21cm",
       "hinta": "25€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "laukut"
+      "kategoria": "Laukut",
+      "id": 14
     },
     {
-      "id": 6,
       "kuva": [
-        "https://public.bc.fi/s2100154/Kuvat/PB170422.JPG"
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100154/Kuvat/PB170422.JPG"
+        }
       ],
       "nimi": "Kangaskassi",
-      "kuvaus": "Kangaskassi, jossa on sisätasku, sekä avainlenkki. Koko 45cm x 47cm",
+      "kuvaus": "Kangaskassi, jossa on sisätasku, sekä avainlenkki. Koko 45cm x 47cm.",
       "hinta": "10€",
       "tekijä": "Riitta Järventie",
-      "kategoria": "laukut"
+      "kategoria": "Laukut",
+      "id": 15
+    },
+    {
+      "kuva": [
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100135/ArtesaanZ%20photos/20210526_103424.jpg"
+        },
+        {
+          "id": 2,
+          "kuva": "https://public.bc.fi/s2100135/ArtesaanZ%20photos/20210526_102722.jpg"
+        }
+      ],
+      "nimi": "Villasukat",
+      "kuvaus": "Käsinkudotut villasukat 100% villasta.",
+      "hinta": "20€",
+      "tekijä": "Salla Vuorikko",
+      "kategoria": "Villasukat",
+      "id": 16
+    },
+    {
+      "kuva": [
+        {
+          "id": 1,
+          "kuva": "https://public.bc.fi/s2100135/ArtesaanZ%20photos/IMG-20210524-WA0002.jpg"
+        },
+        {
+          "id": 2,
+          "kuva": "https://public.bc.fi/s2100135/ArtesaanZ%20photos/IMG-20210524-WA0005.jpg"
+        },
+        {
+          "id": 3,
+          "kuva": "https://public.bc.fi/s2100135/ArtesaanZ%20photos/IMG-20210524-WA0008.jpg"
+        }
+      ],
+      "nimi": "Hapanjuurileipä",
+      "kuvaus": "Huikean kaunis käsintehty leipä omasta juuresta.",
+      "hinta": "10€",
+      "tekijä": "Akseli Miettinen",
+      "kategoria": "Leivonnaiset",
+      "id": 17
     }
   ]
 }

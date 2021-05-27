@@ -1,42 +1,40 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "../Components/ProductCard";
 import SearchBox from "../Components/SearchBox";
-import ProductSingle from "./ProductSingle"
+import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
+import axios from "axios";
 import "../Components/Products.css";
+import Spinner from "react-bootstrap/Spinner";
+import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 
-class Products extends Component {
-  state = {
-    tuote: [],
-    searchInput: "",
+const Products = () => {
+  const [tuotteet, setTuotteet] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const productFilter = tuotteet.filter((tuote) => {
+    return (
+      tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
+      tuote.tekijä.toLowerCase().includes(searchInput.toLowerCase())
+    );
+  });
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/tuotteet")
+      .then(setLoading(true))
+      .then((resp) => setTuotteet(resp.data));
+    setLoading(true);
+  }, []);
+
+  const searchValueHandler = (e) => {
+    setSearchInput(e.target.value);
   };
 
-  componentDidMount() {
-    fetch("http://localhost:3001/tuotteet")
-      .then((resp) => resp.json())
-      .then((data) => this.setState({ tuote: data }));
-  }
-
-  searchValueHandler = (e) => {
-    this.setState({
-      searchInput: e.target.value,
-    });
-  };
-
-  render() {
-    const productFilter = this.state.tuote.filter((tuote) => {
-      return (
-        tuote.nimi
-          .toLowerCase()
-          .includes(this.state.searchInput.toLowerCase()) ||
-        tuote.tekijä
-          .toLowerCase()
-          .includes(this.state.searchInput.toLowerCase())
-      );
-    });
-
-    const filteredProducts = productFilter.map((tuote) => {
-      return (
+  const filteredProducts = productFilter.map((tuote) => {
+    return (
+      <div key={tuote.id}>
         <ProductCard
           id={tuote.id}
           key={tuote.id}
@@ -46,23 +44,31 @@ class Products extends Component {
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
-      );
-    });
-
-    return (
-      <section id="products">
-        <Switch>
-        <Route path="/tuotteet/:id">
-            <ProductSingle />
-          </Route>
-        <Route path="/tuotteet" exact>
-        <SearchBox search={this.searchValueHandler} />
-        <div className="filteredProducts">{filteredProducts}</div>
-        </Route>
-        </Switch>
-      </section>
+      </div>
     );
-  }
-}
+  });
+
+  return (
+    <section id="products">
+      <Switch>
+        <Route path="/tuotteet/:id">
+          <ProductSingle />
+        </Route>
+        <Route path="/tuotteet" exact>
+          <SearchBoxDropdown />
+          <SearchBox search={searchValueHandler} />
+          <div className="filteredProducts">{filteredProducts}</div>
+          {loading === false && (
+            <Spinner
+              className="productSpinner"
+              animation="border"
+              variant="secondary"
+            />
+          )}
+        </Route>
+      </Switch>
+    </section>
+  );
+};
 
 export default Products;
