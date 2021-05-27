@@ -1,7 +1,7 @@
 header {
   position: relative;
   display: flex;
-  margin-top: 4vh;
+  height: 90px;
 }
 
 header nav ul {
@@ -23,5 +23,5 @@ header a:hover {
 }
 
 .logo {
-  width: 100px;
+  width: 300px;
 }

@@ -3,11 +3,11 @@ import herobanner from "../assets/herobanner.svg";
 
 const Landing = () => {
   return (
-    <section>
+    <main>
       <div className="herobanner-cont">
         <img className="herobanner" src={herobanner} alt="herobanner img" />
       </div>
-    </section>
+    </main>
   );
 };
 

@@ -1,6 +1,8 @@
 .productCard img {
-  height: 200px;
+  max-height: 200px;
+  width: 100%;
   border-radius: 5px;
+  object-fit: cover;
 }
 .productCard {
   border-radius: 5px;

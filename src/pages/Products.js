@@ -43,7 +43,7 @@ const Products = () => {
   });
 
   return (
-    <section id="products">
+    <main id="products">
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
@@ -53,7 +53,7 @@ const Products = () => {
           <div className="filteredProducts">{filteredProducts}</div>
         </Route>
       </Switch>
-    </section>
+    </main>
   );
 };
 

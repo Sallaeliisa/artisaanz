@@ -35,7 +35,7 @@ input {
 }
 
 .herobanner {
-  width: 700px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -46,4 +46,8 @@ input {
   border-top: 1px solid #d9dadf;
   border-bottom: 1px solid #d9dadf;
   background-color: #f6f4f4;
+}
+
+main {
+  min-height: calc(100vh - 140px);
 }

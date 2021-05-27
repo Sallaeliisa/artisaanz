@@ -43,7 +43,7 @@ const AddProduct = () => {
   };
 
   return (
-    <section>
+    <main>
       <Form onSubmit={submitData} className="form">
         <Form.Group>
           <Form.Label htmlFor="">Tuote:</Form.Label>
@@ -111,7 +111,7 @@ const AddProduct = () => {
           Lisää tuote
         </Button>
       </Form>
-    </section>
+    </main>
   );
 };
 
