@@ -5,6 +5,7 @@ import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
+import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 
 const Products = () => {
   const [tuotteet, setTuotteet] = useState([]);
@@ -49,6 +50,7 @@ const Products = () => {
           <ProductSingle />
         </Route>
         <Route path="/tuotteet" exact>
+          <SearchBoxDropdown />
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
         </Route>
