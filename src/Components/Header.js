@@ -12,8 +12,8 @@ const Header = () => {
         <Link to="/" exact>
           <img className="logo" src={logo} alt="logo" />
         </Link>
+        <Navigation />
       </Navbar>
-      <Navigation />
     </header>
   );
 };

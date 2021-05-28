@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 const Makers = () => {
   return (
-    <section>
+    <main>
       <Card style={{ width: "50rem" }}>
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
@@ -48,7 +48,7 @@ const Makers = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </section>
+    </main>
   );
 };
 

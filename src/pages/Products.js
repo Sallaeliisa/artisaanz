@@ -49,7 +49,7 @@ const Products = () => {
   });
 
   return (
-    <section id="products">
+    <main id="products">
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
@@ -67,7 +67,7 @@ const Products = () => {
           )}
         </Route>
       </Switch>
-    </section>
+    </main>
   );
 };
 

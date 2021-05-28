@@ -37,17 +37,13 @@ const ProductSingle = () => {
         <p>Artisaani: {tuotteet.tekijä}</p>
         <p>Hinta: {tuotteet.hinta}</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
+        <button className="backbtn" onClick={() => history.goBack()}>
+          Takaisin
+        </button>
       </div>
     );
   }
-  return (
-    <section>
-      {tuoteData}
-      <button className="backbtn" onClick={() => history.goBack()}>
-        Takaisin
-      </button>
-    </section>
-  );
+  return <main>{tuoteData}</main>;
 };
 
 export default ProductSingle;
