@@ -43,73 +43,75 @@ const AddProduct = () => {
   };
 
   return (
-    <Form onSubmit={submitData} className="form">
-      <Form.Group>
-        <Form.Label htmlFor="">Tuote:</Form.Label>
-        <Form.Control
-          type="text"
-          width="10px"
-          name="nimi"
-          onChange={changeData}
-        />
-      </Form.Group>
-      <br></br>
-      <select name="kategoria" onChange={changeData} required>
-        <option value="noValue">Valitse Kategoria:</option>
-        <option value="Pussukat">Pussukat</option>
-        <option value="Laukut">Laukut</option>
-        <option value="Leivonnaiset">Leivonnaiset</option>
-        <option value="Villasukat">Villasukat</option>
-        <option value="Korut">Korut</option>
-      </select>
-      <div>
-        <h1> </h1>
-      </div>
-      <Form.Group>
-        <Form.Label htmlFor="">Tuotteen kuvaus:</Form.Label>
-        <Form.Control
-          as="textarea"
-          rows={3}
-          type="text"
-          name="kuvaus"
-          onChange={changeData}
-        />
-      </Form.Group>
-      {kuvat.map((_, i) => {
-        return (
-          <Form.Group>
-            <Row>
-              <Col>
-                <Form.Label htmlFor="">Kuvat:</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="kuva"
-                  onChange={(e) => changeKuvaData(e, i)}
-                />
-              </Col>
-            </Row>
-          </Form.Group>
-        );
-      })}
-      <Button variant="secondary" size="m" onClick={addMore}>
-        Lisää kuva
-      </Button>
-      <div>
-        <h1> </h1>
-      </div>
-      <Form.Group>
-        <Form.Label htmlFor="">Hinta:</Form.Label>
-        <Form.Control type="text" name="hinta" onChange={changeData} />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label htmlFor="">Tekijä:</Form.Label>
-        <Form.Control type="text" name="tekijä" onChange={changeData} />
-      </Form.Group>
+    <section>
+      <Form onSubmit={submitData} className="form">
+        <Form.Group>
+          <Form.Label htmlFor="">Tuote:</Form.Label>
+          <Form.Control
+            type="text"
+            width="10px"
+            name="nimi"
+            onChange={changeData}
+          />
+        </Form.Group>
+        <br></br>
+        <select name="kategoria" onChange={changeData} required>
+          <option value="noValue">Valitse Kategoria:</option>
+          <option value="Pussukat">Pussukat</option>
+          <option value="Laukut">Laukut</option>
+          <option value="Leivonnaiset">Leivonnaiset</option>
+          <option value="Villasukat">Villasukat</option>
+          <option value="Korut">Korut</option>
+        </select>
+        <div>
+          <h1> </h1>
+        </div>
+        <Form.Group>
+          <Form.Label htmlFor="">Tuotteen kuvaus:</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={3}
+            type="text"
+            name="kuvaus"
+            onChange={changeData}
+          />
+        </Form.Group>
+        {kuvat.map((_, i) => {
+          return (
+            <Form.Group>
+              <Row>
+                <Col>
+                  <Form.Label htmlFor="">Kuvat:</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="kuva"
+                    onChange={(e) => changeKuvaData(e, i)}
+                  />
+                </Col>
+              </Row>
+            </Form.Group>
+          );
+        })}
+        <Button variant="secondary" size="m" onClick={addMore}>
+          Lisää kuva
+        </Button>
+        <div>
+          <h1> </h1>
+        </div>
+        <Form.Group>
+          <Form.Label htmlFor="">Hinta:</Form.Label>
+          <Form.Control type="text" name="hinta" onChange={changeData} />
+        </Form.Group>
+        <Form.Group>
+          <Form.Label htmlFor="">Tekijä:</Form.Label>
+          <Form.Control type="text" name="tekijä" onChange={changeData} />
+        </Form.Group>
 
-      <Button type="submit" variant="secondary" size="m" value="Send data">
-        Lisää tuote
-      </Button>
-    </Form>
+        <Button type="submit" variant="secondary" size="m" value="Send data">
+          Lisää tuote
+        </Button>
+      </Form>
+    </section>
   );
 };
 
