@@ -50,12 +50,14 @@ const Products = () => {
 
   return (
     <main id="products">
+      <>
+        <SearchBoxDropdown search={searchValueHandler} />
+      </>
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
         </Route>
         <Route path="/tuotteet" exact>
-          <SearchBoxDropdown />
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {loading === false && (

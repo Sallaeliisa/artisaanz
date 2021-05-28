@@ -4,6 +4,12 @@ const SearchBoxDropdown = ({ search }) => {
   return (
     <div>
       <input
+        type="text"
+        className="searchBox"
+        onChange={search}
+        placeholder="Etsi kategorialla"
+      ></input>
+      <input
         className="secondSearchBox"
         class="form-control"
         list="datalistOptions"
