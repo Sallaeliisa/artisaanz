@@ -21,3 +21,14 @@
   font-family: "EB Garamond", serif;
   font-size: 1.5rem;
 }
+
+.backbtn:hover {
+  height: 40px;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #4f5b3e;
+  color: #4f5b3e;
+  font-family: "EB Garamond", serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

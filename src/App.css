@@ -20,6 +20,10 @@ input {
   margin: 10px auto;
 }
 
+.form label {
+  padding-top: 20px;
+}
+
 .form {
   padding: 20px;
   margin: 0 auto;
@@ -42,12 +46,28 @@ input {
   justify-content: center;
 }
 
-.herobanner-cont {
-  border-top: 1px solid #d9dadf;
-  border-bottom: 1px solid #d9dadf;
-  background-color: #f6f4f4;
+main {
+  padding-top: 10px;
+  min-height: calc(100vh - 140px);
 }
 
-main {
-  min-height: calc(100vh - 140px);
+.makers {
+  display: grid;
+  grid-template-columns: repeat(2, 50rem);
+  grid-auto-rows: auto;
+  grid-gap: 3rem;
+  min-height: 500px;
+  margin: 2rem 0 0 3rem;
+}
+
+.addbtn {
+  height: 45px;
+  width: 200px;
+  background-color: #4f5b3e;
+  outline: 5px solid #4f5b3e;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  margin: 20px 0 20px 0;
+  font-size: 1.2rem;
 }

@@ -1,8 +1,10 @@
 import React from "react";
 
+import "./SearchBox.css";
+
 const SearchBoxDropdown = ({ search }) => {
   return (
-    <div>
+    <div className="mr-sm-2">
       <input
         className="secondSearchBox"
         class="form-control"
