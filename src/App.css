@@ -49,6 +49,7 @@ input {
 main {
   padding-top: 10px;
   min-height: calc(100vh - 140px);
+  background-color: #fffffb;
 }
 
 .makers {
@@ -58,6 +59,22 @@ main {
   grid-gap: 3rem;
   min-height: 500px;
   margin: 2rem 0 0 3rem;
+}
+
+.makersCard {
+  border: 2px solid #c7c8a8;
+  box-shadow: 0 0 8px #4f5b3e inset;
+  border-radius: 10px;
+  color: #0d0d0d;
+}
+
+.makersCard a {
+  color: #4f5b3e;
+}
+
+.makersCard a:hover {
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 .addbtn {
