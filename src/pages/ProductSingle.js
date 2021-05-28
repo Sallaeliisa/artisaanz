@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import "../Components/ProductSingle.css";
 
 const ProductSingle = () => {
@@ -34,7 +35,7 @@ const ProductSingle = () => {
         </ul>
         <h1>{tuotteet.nimi}</h1>
         <p>{tuotteet.kuvaus}</p>
-        <p>Artisaani: {tuotteet.tekijä}</p>
+        <p><Link to={`/tekijät/${tuotteet.tekijä}`}>Artisaani: {tuotteet.tekijä}</Link></p>
         <p>Hinta: {tuotteet.hinta}</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
         <button className="backbtn" onClick={() => history.goBack()}>
