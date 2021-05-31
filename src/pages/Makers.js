@@ -3,8 +3,8 @@ import Card from "react-bootstrap/Card";
 
 const Makers = () => {
   return (
-    <main>
-      <Card style={{ width: "50rem" }}>
+    <main className="makers">
+      <Card className="makersCard" style={{ width: "50rem" }}>
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -21,7 +21,7 @@ const Makers = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: "50rem" }}>
+      <Card className="makersCard" style={{ width: "50rem" }}>
         <Card.Body>
           <Card.Title>Akseli Miettinen</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -35,7 +35,7 @@ const Makers = () => {
         </Card.Body>
       </Card>
 
-      <Card style={{ width: "50rem" }}>
+      <Card className="makersCard" style={{ width: "50rem" }}>
         <Card.Body>
           <Card.Title>Salla Vuorikko</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

@@ -93,7 +93,7 @@ const AddProduct = () => {
             </Form.Group>
           );
         })}
-        <Button variant="secondary" size="m" onClick={addMore}>
+        <Button className="addbtn" onClick={addMore}>
           Lisää kuva
         </Button>
         <div>
@@ -108,7 +108,7 @@ const AddProduct = () => {
           <Form.Control type="text" name="artesaani" onChange={changeData} />
         </Form.Group>
 
-        <Button type="submit" variant="secondary" size="m" value="Send data">
+        <Button type="submit" className="addbtn" value="Send data">
           Lisää tuote
         </Button>
       </Form>

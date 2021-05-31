@@ -1,0 +1,9 @@
+.mr-sm-2 {
+  padding: 2 px 5px;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.secondSearchBox input {
+  width: 700px;
+}
