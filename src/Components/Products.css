@@ -33,3 +33,24 @@
   grid-auto-rows: auto;
   grid-gap: 3rem;
 }
+
+@media (max-width: 899px) {
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+
+  .productCard img {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+  .productCard {
+    max-height: 450px;
+    width: 300px;
+    margin-left: 50px;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+}

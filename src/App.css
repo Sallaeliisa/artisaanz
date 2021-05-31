@@ -88,3 +88,9 @@ main {
   margin: 20px 0 20px 0;
   font-size: 1.2rem;
 }
+
+@media (max-width: 899px) {
+  main {
+    padding-top: 50px;
+  }
+}
