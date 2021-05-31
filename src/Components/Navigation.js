@@ -6,6 +6,9 @@ const Navigation = () => {
     <nav>
       <ul>
         <li>
+          <Link to="/kotisivu"> Kotisivu </Link>
+        </li>
+        <li>
           <Link to="/tuotteet"> Tuotteet </Link>
         </li>
         <li>
