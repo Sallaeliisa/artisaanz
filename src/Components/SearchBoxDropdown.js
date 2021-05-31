@@ -3,6 +3,12 @@ import React from "react";
 const SearchBoxDropdown = ({ search }) => {
   return (
     <div>
+      {/*<input
+        type="text"
+        className="searchBox"
+        onChange={search}
+        placeholder="Etsi kategorialla"
+      ></input> */}
       <input
         className="secondSearchBox"
         class="form-control"
@@ -17,6 +23,7 @@ const SearchBoxDropdown = ({ search }) => {
         <option value="Leivonnaiset" />
         <option value="Villasukat" />
         <option value="Korut" />
+        <option value="Sisustus" />
       </datalist>
     </div>
   );

@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 
 const Makers = () => {
   return (
-    <section>
+    <main>
       <Card style={{ width: "50rem" }}>
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
@@ -15,7 +15,7 @@ const Makers = () => {
             on runsaasti aikaa tehdä erilaisia tuotteita. Ohessa olevasta
             linkistä löydät lisää tuotoksiani.
           </Card.Text>
-          <Card.Link href="https://pussukat.wordpress.com/">
+          <Card.Link href="https://pussukat.wordpress.com/" target="_blank">
             Pussukat kotisivu
           </Card.Link>
         </Card.Body>
@@ -48,7 +48,7 @@ const Makers = () => {
           </Card.Text>
         </Card.Body>
       </Card>
-    </section>
+    </main>
   );
 };
 

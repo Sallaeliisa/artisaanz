@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../Components/ProductCard";
+import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
 import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
-import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 
 const Products = () => {
   const [tuotteet, setTuotteet] = useState([]);
@@ -30,6 +30,7 @@ const Products = () => {
 
   const searchValueHandler = (e) => {
     setSearchInput(e.target.value);
+    console.log(searchInput);
   };
 
   const filteredProducts = productFilter.map((tuote) => {
@@ -49,13 +50,15 @@ const Products = () => {
   });
 
   return (
-    <section id="products">
+    <main id="products">
+      <>
+        <SearchBoxDropdown search={searchValueHandler} />
+      </>
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
         </Route>
         <Route path="/tuotteet" exact>
-          <SearchBoxDropdown />
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {loading === false && (
@@ -67,7 +70,7 @@ const Products = () => {
           )}
         </Route>
       </Switch>
-    </section>
+    </main>
   );
 };
 
