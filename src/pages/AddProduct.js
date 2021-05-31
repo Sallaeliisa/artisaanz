@@ -101,7 +101,7 @@ const AddProduct = () => {
         </div>
         <Form.Group>
           <Form.Label htmlFor="">Hinta:</Form.Label>
-          <Form.Control type="text" name="hinta" onChange={changeData} />
+          <Form.Control type="number" name="hinta" onChange={changeData} />
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="">Artesaani:</Form.Label>

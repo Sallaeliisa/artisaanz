@@ -11,7 +11,7 @@ const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
         <img src={kuva[0].kuva} alt="tuotteen kuva" />
       </Link>
       <p>Artesaani: {artesaani}</p>
-      <p>Hinta: {hinta}</p>
+      <p>Hinta: {hinta} €</p>
       <p>Kategoria: {kategoria}</p>
     </div>
   );

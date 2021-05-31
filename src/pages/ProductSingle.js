@@ -45,7 +45,7 @@ const ProductSingle = () => {
             Artesaani: {tuotteet.artesaani}
           </Link>
         </p>
-        <p>Hinta: {tuotteet.hinta}</p>
+        <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
         <button className="backbtn" onClick={() => history.goBack()}>
           Takaisin
