@@ -11,10 +11,11 @@ const Main = () => {
     <main>
       <Switch>
         <Route path="/" exact component={Landing} />
+        <Route path="/kotisivu" component={Landing} />
         <Route path="/tuotteet" component={Products} />
-        <Route path="/tekijät" component={Makers} />
+        <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
-        <Route path="/LisääTuote" component={AddProduct} />
+        <Route path="/myyjälle" component={AddProduct} />
       </Switch>
     </main>
   );

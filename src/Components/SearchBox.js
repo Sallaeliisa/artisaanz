@@ -3,15 +3,17 @@ import Form from "react-bootstrap/Form";
 
 import "./SearchBox.css";
 
-const SearchBox = (props) => {
+const SearchBox = ({ search }) => {
+
   return (
     <div className="searchBox">
       <Form inline>
         <Form.Control
           type="text"
-          placeholder="Hae tuotteen tai tekijän nimellä"
+
+          placeholder="Hae tuotteen tai artesaanin nimellä"
           className="mr-sm-2"
-          onChange={props.search}
+          onChange={search}
         />
       </Form>
     </div>

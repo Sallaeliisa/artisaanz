@@ -1,7 +1,7 @@
 import React from "react";
 
 const About = () => {
-  return <main>Akseli kävi tätä muuttamassa.</main>;
+  return <main>Tänne tulee tietoa meistä</main>;
 };
 
 export default About;

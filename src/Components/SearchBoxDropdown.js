@@ -4,7 +4,9 @@ import "./SearchBox.css";
 
 const SearchBoxDropdown = ({ search }) => {
   return (
+
     <div className="mr-sm-2">
+
       <input
         className="secondSearchBox"
         class="form-control"
@@ -19,6 +21,7 @@ const SearchBoxDropdown = ({ search }) => {
         <option value="Leivonnaiset" />
         <option value="Villasukat" />
         <option value="Korut" />
+        <option value="Sisustus" />
       </datalist>
     </div>
   );

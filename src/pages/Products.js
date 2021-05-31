@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../Components/ProductCard";
+import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
 import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
-import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 
 const Products = () => {
   const [tuotteet, setTuotteet] = useState([]);
@@ -16,13 +16,14 @@ const Products = () => {
   const productFilter = tuotteet.filter((tuote) => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.tekijä.toLowerCase().includes(searchInput.toLowerCase())
+      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
+      tuote.kategoria.toLowerCase().includes(searchInput.toLocaleLowerCase)
     );
   });
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/tuotteet")
+      .get("https://artisaanz.herokuapp.com/product/all")
       .then(setLoading(true))
       .then((resp) => setTuotteet(resp.data));
     setLoading(true);
@@ -30,6 +31,7 @@ const Products = () => {
 
   const searchValueHandler = (e) => {
     setSearchInput(e.target.value);
+    console.log(searchInput);
   };
 
   const filteredProducts = productFilter.map((tuote) => {
@@ -40,7 +42,7 @@ const Products = () => {
           key={tuote.id}
           kuva={tuote.kuva}
           nimi={tuote.nimi}
-          tekijä={tuote.tekijä}
+          artesaani={tuote.artesaani}
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
@@ -50,12 +52,14 @@ const Products = () => {
 
   return (
     <main id="products">
+      <>
+        <SearchBoxDropdown search={searchValueHandler} />
+      </>
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
         </Route>
         <Route path="/tuotteet" exact>
-          <SearchBoxDropdown />
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {loading === false && (

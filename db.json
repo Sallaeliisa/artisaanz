@@ -10,7 +10,7 @@
       "nimi": "Kolikkopussukka",
       "kuvaus": "Pieni kolikkopussukka johon mahtuu myös maksukortit. Koko 9cm x 12cm.",
       "hinta": "10€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Pussukat",
       "id": 10
     },
@@ -24,7 +24,7 @@
       "nimi": "Kännykkäpussukka",
       "kuvaus": "Kätevä pussukka kaiken kokosille kännyköille kun tarvitset kädet vapaaksi. Hihna mukana. Koko 13cm x 20cm",
       "hinta": "16€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Pussukat",
       "id": 11
     },
@@ -38,7 +38,7 @@
       "nimi": "Käsilaukku",
       "kuvaus": "Käsilaukku. Hihna mukana. Koko 22cm x 24cm\"",
       "hinta": "30€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Laukut",
       "id": 12
     },
@@ -52,7 +52,7 @@
       "nimi": "Käsilaukku",
       "kuvaus": "Käsilaukku Marimekon Unikko-kuviolla. Hihna mukana. Koko 25cm x 29cm",
       "hinta": "35€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Laukut",
       "id": 13
     },
@@ -66,7 +66,7 @@
       "nimi": "Käsilaukku",
       "kuvaus": "Käsilaukku. Hihna mukana. Koko 18cm x 21cm",
       "hinta": "25€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Laukut",
       "id": 14
     },
@@ -80,7 +80,7 @@
       "nimi": "Kangaskassi",
       "kuvaus": "Kangaskassi, jossa on sisätasku, sekä avainlenkki. Koko 45cm x 47cm.",
       "hinta": "10€",
-      "tekijä": "Riitta Järventie",
+      "artesaani": "Riitta Järventie",
       "kategoria": "Laukut",
       "id": 15
     },
@@ -98,7 +98,7 @@
       "nimi": "Villasukat",
       "kuvaus": "Käsinkudotut villasukat 100% villasta.",
       "hinta": "20€",
-      "tekijä": "Salla Vuorikko",
+      "artesaani": "Salla Vuorikko",
       "kategoria": "Villasukat",
       "id": 16
     },
@@ -120,7 +120,7 @@
       "nimi": "Hapanjuurileipä",
       "kuvaus": "Huikean kaunis käsintehty leipä omasta juuresta.",
       "hinta": "10€",
-      "tekijä": "Akseli Miettinen",
+      "artesaani": "Akseli Miettinen",
       "kategoria": "Leivonnaiset",
       "id": 17
     }
