@@ -15,7 +15,7 @@ const Main = () => {
         <Route path="/tuotteet" component={Products} />
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
-        <Route path="/LisääTuote" component={AddProduct} />
+        <Route path="/myyjälle" component={AddProduct} />
       </Switch>
     </main>
   );

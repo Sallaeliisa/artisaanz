@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 
-const SearchBox = (props) => {
+const SearchBox = ({ search }) => {
   return (
     <div className="searchBox">
       <Form inline>
@@ -9,7 +9,7 @@ const SearchBox = (props) => {
           type="text"
           placeholder="Hae tuotteen tai artesaanin nimellä"
           className="mr-sm-2"
-          onChange={props.search}
+          onChange={search}
         />
       </Form>
     </div>

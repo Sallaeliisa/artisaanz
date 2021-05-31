@@ -16,7 +16,8 @@ const Products = () => {
   const productFilter = tuotteet.filter((tuote) => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase())
+      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
+      tuote.kategoria.toLowerCase().includes(searchInput.toLocaleLowerCase)
     );
   });
 
