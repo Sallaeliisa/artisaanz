@@ -24,15 +24,18 @@ const ProductSingle = () => {
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
-        <ul>
-          {tuotteet.kuva.map((item, i) => {
+          {tuotteet.kuva.filter(item => item.id === 1).map((item, i) => {
+            return (
+                <img src={item.kuva} alt="tuotteen kuva" />
+            );
+          })}
+          {tuotteet.kuva.filter(item => item.id > 1).map((item, i) => {
             return (
               <ul key={i}>
                 <img src={item.kuva} alt="tuotteen kuva" />
               </ul>
             );
           })}
-        </ul>
         <h1>{tuotteet.nimi}</h1>
         <p>{tuotteet.kuvaus}</p>
         <p><Link to={`/tekijät/${tuotteet.tekijä}`}>Artisaani: {tuotteet.tekijä}</Link></p>
