@@ -13,7 +13,7 @@ const AddProduct = () => {
     nimi: "",
     kuvaus: "",
     hinta: "",
-    tekijä: "",
+    artesaani: "",
   });
 
   const [kuvat, setKuvat] = useState([{ id: 1 }]);
@@ -62,6 +62,7 @@ const AddProduct = () => {
           <option value="Leivonnaiset">Leivonnaiset</option>
           <option value="Villasukat">Villasukat</option>
           <option value="Korut">Korut</option>
+          <option value="Sisustus">Sisustus</option>
         </select>
         <div>
           <h1> </h1>
@@ -103,8 +104,8 @@ const AddProduct = () => {
           <Form.Control type="text" name="hinta" onChange={changeData} />
         </Form.Group>
         <Form.Group>
-          <Form.Label htmlFor="">Tekijä:</Form.Label>
-          <Form.Control type="text" name="tekijä" onChange={changeData} />
+          <Form.Label htmlFor="">Artesaani:</Form.Label>
+          <Form.Control type="text" name="artesaani" onChange={changeData} />
         </Form.Group>
 
         <Button type="submit" variant="secondary" size="m" value="Send data">
