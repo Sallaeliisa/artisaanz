@@ -22,7 +22,7 @@ const Products = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/tuotteet")
+      .get("https://artisaanz.herokuapp.com/product/all")
       .then(setLoading(true))
       .then((resp) => setTuotteet(resp.data));
     setLoading(true);

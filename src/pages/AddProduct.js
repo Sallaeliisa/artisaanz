@@ -38,7 +38,7 @@ const AddProduct = () => {
 
   const submitData = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/tuotteet", data);
+    axios.post("https://artisaanz.herokuapp.com/product/add", data);
     e.target.reset();
   };
 

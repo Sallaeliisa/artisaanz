@@ -14,7 +14,7 @@ const ProductSingle = () => {
   useEffect(() => {
     if (!tuotteet) {
       axios
-        .get("http://localhost:3001/tuotteet/" + id)
+        .get("https://artisaanz.herokuapp.com/product/find/" + id)
         .then((res) => setTuotteet(res.data));
     }
   });
