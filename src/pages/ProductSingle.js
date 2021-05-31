@@ -41,8 +41,8 @@ const ProductSingle = () => {
         <h1>{tuotteet.nimi}</h1>
         <p>{tuotteet.kuvaus}</p>
         <p>
-          <Link to={`/tekijät/${tuotteet.tekijä}`}>
-            Artesaani: {tuotteet.tekijä}
+          <Link to={`/artesaanit/${tuotteet.artesaani}`}>
+            Artesaani: {tuotteet.artesaani}
           </Link>
         </p>
         <p>Hinta: {tuotteet.hinta}</p>

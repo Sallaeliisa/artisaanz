@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ id, nimi, kuva, tekijä, hinta, kategoria }) => {
+const ProductCard = ({ id, nimi, kuva, artesaani, hinta, kategoria }) => {
   return (
     <div className="productCard">
       <Link to={`/tuotteet/${id}`}>
@@ -10,7 +10,7 @@ const ProductCard = ({ id, nimi, kuva, tekijä, hinta, kategoria }) => {
       <Link to={`/tuotteet/${id}`}>
         <img src={kuva[0].kuva} alt="tuotteen kuva" />
       </Link>
-      <p>Artesaani: {tekijä}</p>
+      <p>Artesaani: {artesaani}</p>
       <p>Hinta: {hinta}</p>
       <p>Kategoria: {kategoria}</p>
     </div>

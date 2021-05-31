@@ -16,7 +16,7 @@ const Products = () => {
   const productFilter = tuotteet.filter((tuote) => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.tekijä.toLowerCase().includes(searchInput.toLowerCase())
+      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase())
     );
   });
 
@@ -41,7 +41,7 @@ const Products = () => {
           key={tuote.id}
           kuva={tuote.kuva}
           nimi={tuote.nimi}
-          tekijä={tuote.tekijä}
+          artesaani={tuote.artesaani}
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
