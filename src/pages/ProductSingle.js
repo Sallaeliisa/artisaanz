@@ -8,6 +8,7 @@ import "../Components/ProductSingle.css";
 
 const ProductSingle = () => {
   const [tuotteet, setTuotteet] = useState();
+  const [showPopup, setShowPopup] = useState(false);
   let { id } = useParams();
   const history = useHistory();
 
@@ -21,19 +22,34 @@ const ProductSingle = () => {
 
   let tuoteData = undefined;
 
+  const Popup = () => {
+    return (
+        <div className="popup">
+         <h1>Popup</h1>
+        </div>
+    );
+  };
+
+  const popupHandler = (e) => {
+    setShowPopup(true);
+    e.preventDefault();
+    console.log(showPopup);
+  };
+  
+
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
         {tuotteet.kuva
           .filter((item) => item.id === 1)
-          .map((item, i) => {
-            return <img src={item.kuva} alt="tuotteen kuva" />;
+          .map((item) => {
+            return <img src={item.kuva} alt="tuotteen kuva" key={item.id} />;
           })}
         {tuotteet.kuva
           .filter((item) => item.id > 1)
-          .map((item, i) => {
+          .map((item) => {
             return (
-              <ul key={i}>
+              <ul key={item.id}>
                 <img src={item.kuva} alt="tuotteen kuva" />
               </ul>
             );
@@ -47,13 +63,29 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
+        <button onClick={popupHandler}>show popup</button>
         <button className="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
       </div>
     );
   }
-  return <main>{tuoteData}</main>;
+
+  // const Popup = () => {
+
+  //   console.log(tuotteet.kuva);
+  //   return (
+  //       <div className="popup">
+  //         Popup
+  //       </div>
+  //   );
+  // };
+
+
+  return<main>
+    <Popup />
+    {tuoteData}
+    </main>;
 };
 
 export default ProductSingle;

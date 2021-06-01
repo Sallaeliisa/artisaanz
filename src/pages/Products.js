@@ -9,15 +9,15 @@ import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 
 const Products = () => {
-  const [tuotteet, setTuotteet] = useState([]);
+  const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const productFilter = tuotteet.filter((tuote) => {
+  const productFilter = tuote.filter((tuote) => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
       tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.kategoria.toLowerCase().includes(searchInput.toLocaleLowerCase)
+      tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase)
     );
   });
 
@@ -25,7 +25,7 @@ const Products = () => {
     axios
       .get("https://artisaanz.herokuapp.com/product/all")
       .then(setLoading(true))
-      .then((resp) => setTuotteet(resp.data));
+      .then((resp) => setTuote(resp.data));
     setLoading(true);
   }, []);
 
