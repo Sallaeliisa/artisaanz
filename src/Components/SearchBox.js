@@ -10,7 +10,6 @@ const SearchBox = ({ search }) => {
       <Form inline>
         <Form.Control
           type="text"
-
           placeholder="Hae tuotteen tai artesaanin nimellä"
           className="mr-sm-2"
           onChange={search}

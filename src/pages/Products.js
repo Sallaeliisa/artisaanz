@@ -17,7 +17,7 @@ const Products = () => {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
       tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.kategoria.toLowerCase().includes(searchInput.toLocaleLowerCase)
+      tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
     );
   });
 
