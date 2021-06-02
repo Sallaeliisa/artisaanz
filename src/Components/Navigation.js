@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navigation = () => {
@@ -21,23 +22,29 @@ const Navigation = () => {
         <li>
           <Link to="/meistä"> Meistä </Link>
         </li>
-        <Dropdown>
-          <Dropdown.Toggle variant="secondary" size="sm" id="dropdown-basic">
+        <li>
+          <Dropdown>
+            {/* <Dropdown.Toggle variant="secondary" size="sm" id="dropdown-basic">
             Myyjälle
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item
-              onSelect={handleSelect}
-              id="Riitta Järventie"
-              title="Riitta Järventie"
-              href="/myyjälle"
+          </Dropdown.Toggle> */}
+            <DropdownButton
+              alignRight
+              title="Valitse myyjä"
+              id="dropdown-menu-align-right"
             >
-              Riitta Järventie
-            </Dropdown.Item>
-            <Dropdown.Item href="/myyjälle">Akseli Miettinen</Dropdown.Item>
-            <Dropdown.Item href="/myyjälle">Salla Vuorikko</Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+              <Dropdown.Item
+                onSelect={handleSelect}
+                id="Riitta Järventie"
+                title="Riitta Järventie"
+                href="/myyjälle"
+              >
+                Riitta Järventie
+              </Dropdown.Item>
+              <Dropdown.Item href="/myyjälle">Akseli Miettinen</Dropdown.Item>
+              <Dropdown.Item href="/myyjälle">Salla Vuorikko</Dropdown.Item>
+            </DropdownButton>
+          </Dropdown>
+        </li>
       </ul>
     </nav>
   );
