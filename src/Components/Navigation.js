@@ -4,9 +4,19 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navigation = () => {
-  const handleSelect = () => {
-    console.log("selected Riitta!");
+  const [value, setValue] = useState("");
+  const handleSelect = (e) => {
+    console.log(e);
+    setValue(e);
   };
+
+  // function Select() {
+  //   const [value, setValue] = useState("");
+  //   const handleSelect = (e) => {
+  //     console.log(e);
+  //     setValue(e);
+  //   };
+  // }
   return (
     <nav>
       <ul>
@@ -30,18 +40,21 @@ const Navigation = () => {
             <DropdownButton
               alignRight
               title="Valitse myyjä"
-              id="dropdown-menu-align-right"
+              id="admin select"
+              onSelect={handleSelect}
             >
-              <Dropdown.Item
-                onSelect={handleSelect}
-                id="Riitta Järventie"
-                title="Riitta Järventie"
-                href="/myyjälle"
-              >
+              <Dropdown.Item eventKey="Riitta Järventie">
                 Riitta Järventie
               </Dropdown.Item>
-              <Dropdown.Item href="/myyjälle">Akseli Miettinen</Dropdown.Item>
-              <Dropdown.Item href="/myyjälle">Salla Vuorikko</Dropdown.Item>
+              <Dropdown.Item
+                eventKey="Akseli Miettinen"
+                //href="/myyjälle"
+              >
+                Akseli Miettinen
+              </Dropdown.Item>
+              <Dropdown.Item eventKey="Salla Vuorikko" href="/myyjälle">
+                Salla Vuorikko
+              </Dropdown.Item>
             </DropdownButton>
           </Dropdown>
         </li>
