@@ -8,6 +8,8 @@ import "../Components/ProductSingle.css";
 
 const ProductSingle = () => {
   const [tuotteet, setTuotteet] = useState();
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupImg, setPopupImg] = useState();
   let { id } = useParams();
   const history = useHistory();
 
@@ -21,20 +23,49 @@ const ProductSingle = () => {
 
   let tuoteData = undefined;
 
+  const Popup = () => {
+    return (
+      <div className="popup">
+        <button onClick={close}>Sulje</button>
+        <img src={popupImg} alt="iso tuotekuva" />
+      </div>
+    );
+  };
+
+  const popupHandler = () => {
+    setShowPopup(true);
+  };
+
+  const close = () => {
+    setShowPopup(false);
+  }
+
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
-        {tuotteet.kuva
-          .filter((item) => item.id === 1)
-          .map((item, i) => {
-            return <img src={item.kuva} alt="tuotteen kuva" />;
-          })}
+        <div className="mainImage">
+          {tuotteet.kuva
+            .filter((item) => item.id === 1)
+            .map((item) => {
+              return (
+                <button onClick={() => {
+                  setPopupImg(item.kuva);
+                  popupHandler()}}>
+                  <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                </button>
+              );
+            })}
+        </div>
         {tuotteet.kuva
           .filter((item) => item.id > 1)
-          .map((item, i) => {
+          .map((item) => {
             return (
-              <ul key={i}>
-                <img src={item.kuva} alt="tuotteen kuva" />
+              <ul key={item.id}>
+                <button onClick={() => {
+                  setPopupImg(item.kuva);
+                  popupHandler()}}>
+                  <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                </button>
               </ul>
             );
           })}
@@ -53,7 +84,13 @@ const ProductSingle = () => {
       </div>
     );
   }
-  return <main>{tuoteData}</main>;
+
+  return (
+    <main>
+      {showPopup === true && <Popup />}
+      {tuoteData}
+    </main>
+  );
 };
 
 export default ProductSingle;
