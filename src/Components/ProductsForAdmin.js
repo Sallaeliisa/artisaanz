@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "./ProductCard";
 import ProductCardForAdmin from "./ProductCardForAdmin";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navigation = () => {
+  const handleSelect = () => {
+    console.log("selected Riitta!");
+  };
   return (
     <nav>
       <ul>
@@ -23,7 +26,14 @@ const Navigation = () => {
             Myyjälle
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item href="/myyjälle">Riitta Järventie</Dropdown.Item>
+            <Dropdown.Item
+              onSelect={handleSelect}
+              id="Riitta Järventie"
+              title="Riitta Järventie"
+              href="/myyjälle"
+            >
+              Riitta Järventie
+            </Dropdown.Item>
             <Dropdown.Item href="/myyjälle">Akseli Miettinen</Dropdown.Item>
             <Dropdown.Item href="/myyjälle">Salla Vuorikko</Dropdown.Item>
           </Dropdown.Menu>

@@ -11,7 +11,7 @@ const ProductCardForAdmin = ({
 }) => {
   return (
     <div className="productCard">
-      <Link to={`/tuotteet/${id}`}>
+      <Link to={`/munTuotteet/${id}`}>
         <p>{nimi}</p>
       </Link>
       <Link to={`/munTuotteet/${id}`}>

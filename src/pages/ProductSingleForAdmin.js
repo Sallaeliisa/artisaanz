@@ -99,9 +99,6 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn" onClick={removeProduct}>
           Poista tämä tuote
         </button>
-        <Button size="sm" variant="danger" onClick={removeProduct}>
-          Poista tämä tuote
-        </Button>
       </div>
     );
   }
