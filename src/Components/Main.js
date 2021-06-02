@@ -6,6 +6,7 @@ import Makers from "../pages/Makers";
 import About from "../pages/About";
 import AddProduct from "../pages/AddProduct";
 import Admin from "../pages/Admin";
+import ProductsForAdmin from "./ProductsForAdmin";
 
 const Main = () => {
   return (
@@ -14,6 +15,7 @@ const Main = () => {
         <Route path="/" exact component={Landing} />
         <Route path="/kotisivu" component={Landing} />
         <Route path="/tuotteet" component={Products} />
+        <Route path="/munTuotteet" component={ProductsForAdmin} />
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
         <Route path="/myyjälle" component={Admin} />

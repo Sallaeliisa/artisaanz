@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
+import ProductCardForAdmin from "./ProductCardForAdmin";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
 import ProductSingleForAdmin from "../pages/ProductSingleForAdmin";
@@ -40,7 +41,7 @@ const ProductsForAdmin = () => {
     return (
       //<div key={tuote.id}>
       <Container fluid>
-        <ProductCard
+        <ProductCardForAdmin
           id={tuote.id}
           key={tuote.id}
           kuva={tuote.kuva}
@@ -57,10 +58,10 @@ const ProductsForAdmin = () => {
   return (
     <div id="products">
       <Switch>
-        <Route path="/tuotteet/:id">
+        <Route path="/munTuotteet/:id">
           <ProductSingleForAdmin />
         </Route>
-        <Route path="/:tuotteet" exact>
+        <Route path="/:munTuotteet" exact>
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {loading === false && (

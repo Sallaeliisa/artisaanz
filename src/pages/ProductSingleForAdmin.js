@@ -35,6 +35,9 @@ const ProductSingleForAdmin = () => {
   const removeProduct = () => {
     alert("This will delete the item from database in the future");
   };
+  const editProduct = () => {
+    alert("Tästä pääset muokkaamaan tuotetta jatkossa");
+  };
   const popupHandler = () => {
     setShowPopup(true);
   };
@@ -88,7 +91,13 @@ const ProductSingleForAdmin = () => {
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
         <button className="backbtn" onClick={() => history.goBack()}>
-          Takas
+          Takaisin
+        </button>
+        <button className="backbtn" onClick={editProduct}>
+          Muokkaa
+        </button>
+        <button className="backbtn" onClick={removeProduct}>
+          Poista tämä tuote
         </button>
         <Button size="sm" variant="danger" onClick={removeProduct}>
           Poista tämä tuote
