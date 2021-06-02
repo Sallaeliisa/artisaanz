@@ -47,7 +47,7 @@ const AddProductForAdmin = () => {
   return (
     <>
       <ProductsForAdmin />
-      <main>
+      <div>
         <Form onSubmit={submitData} className="form">
           <Form.Group>
             <Form.Label htmlFor="">Tuote:</Form.Label>
@@ -116,7 +116,7 @@ const AddProductForAdmin = () => {
             Lisää tuote
           </Button>
         </Form>
-      </main>
+      </div>
     </>
   );
 };

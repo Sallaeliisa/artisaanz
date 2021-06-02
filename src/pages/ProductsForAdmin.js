@@ -7,6 +7,7 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
 
 const ProductsForAdmin = () => {
   const [tuote, setTuote] = useState([]);
@@ -36,7 +37,8 @@ const ProductsForAdmin = () => {
 
   const filteredProducts = productFilter.map((tuote) => {
     return (
-      <div key={tuote.id}>
+      //<div key={tuote.id}>
+      <Container fluid>
         <ProductCard
           id={tuote.id}
           key={tuote.id}
@@ -46,20 +48,18 @@ const ProductsForAdmin = () => {
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
-      </div>
+      </Container>
+      //</div>
     );
   });
 
   return (
-    <main id="products">
-      <>
-        <SearchBoxDropdown search={searchValueHandler} />
-      </>
+    <div id="products">
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
         </Route>
-        <Route path="/tuotteet" exact>
+        <Route path="/:tuotteet" exact>
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {loading === false && (
@@ -71,7 +71,7 @@ const ProductsForAdmin = () => {
           )}
         </Route>
       </Switch>
-    </main>
+    </div>
   );
 };
 
