@@ -9,6 +9,7 @@ import "../Components/ProductSingle.css";
 const ProductSingle = () => {
   const [tuotteet, setTuotteet] = useState();
   const [showPopup, setShowPopup] = useState(false);
+  const [popupImg, setPopupImg] = useState();
   let { id } = useParams();
   const history = useHistory();
 
@@ -24,33 +25,47 @@ const ProductSingle = () => {
 
   const Popup = () => {
     return (
-        <div className="popup">
-         <h1>Popup</h1>
-        </div>
+      <div className="popup">
+        <button onClick={close}>Sulje</button>
+        <img src={popupImg} alt="iso tuotekuva" />
+      </div>
     );
   };
 
-  const popupHandler = (e) => {
+  const popupHandler = () => {
     setShowPopup(true);
-    e.preventDefault();
-    console.log(showPopup);
   };
-  
+
+  const close = () => {
+    setShowPopup(false);
+  }
 
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
-        {tuotteet.kuva
-          .filter((item) => item.id === 1)
-          .map((item) => {
-            return <img src={item.kuva} alt="tuotteen kuva" key={item.id} />;
-          })}
+        <div className="mainImage">
+          {tuotteet.kuva
+            .filter((item) => item.id === 1)
+            .map((item) => {
+              return (
+                <button onClick={() => {
+                  setPopupImg(item.kuva);
+                  popupHandler()}}>
+                  <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                </button>
+              );
+            })}
+        </div>
         {tuotteet.kuva
           .filter((item) => item.id > 1)
           .map((item) => {
             return (
               <ul key={item.id}>
-                <img src={item.kuva} alt="tuotteen kuva" />
+                <button onClick={() => {
+                  setPopupImg(item.kuva);
+                  popupHandler()}}>
+                  <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
+                </button>
               </ul>
             );
           })}
@@ -63,7 +78,6 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button onClick={popupHandler}>show popup</button>
         <button className="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
@@ -71,21 +85,12 @@ const ProductSingle = () => {
     );
   }
 
-  // const Popup = () => {
-
-  //   console.log(tuotteet.kuva);
-  //   return (
-  //       <div className="popup">
-  //         Popup
-  //       </div>
-  //   );
-  // };
-
-
-  return<main>
-    <Popup />
-    {tuoteData}
-    </main>;
+  return (
+    <main>
+      {showPopup === true && <Popup />}
+      {tuoteData}
+    </main>
+  );
 };
 
 export default ProductSingle;
