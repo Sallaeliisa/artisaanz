@@ -5,6 +5,7 @@ import Products from "../pages/Products";
 import Makers from "../pages/Makers";
 import About from "../pages/About";
 import AddProduct from "../pages/AddProduct";
+import Admin from "../pages/Admin";
 
 const Main = () => {
   return (
@@ -15,7 +16,7 @@ const Main = () => {
         <Route path="/tuotteet" component={Products} />
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
-        <Route path="/myyjälle" component={AddProduct} />
+        <Route path="/myyjälle" component={Admin} />
       </Switch>
     </main>
   );

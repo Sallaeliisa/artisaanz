@@ -9,7 +9,7 @@ import ProductsForAdmin from "./ProductsForAdmin";
 import "../App.css";
 import Products from "./Products";
 
-const AddProduct = () => {
+const AddProductForAdmin = () => {
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -107,10 +107,10 @@ const AddProduct = () => {
             <Form.Label htmlFor="">Hinta:</Form.Label>
             <Form.Control type="number" name="hinta" onChange={changeData} />
           </Form.Group>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label htmlFor="">Artesaani:</Form.Label>
             <Form.Control type="text" name="artesaani" onChange={changeData} />
-          </Form.Group>
+          </Form.Group> */}
 
           <Button type="submit" className="addbtn" value="Send data">
             Lisää tuote
@@ -121,4 +121,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddProductForAdmin;

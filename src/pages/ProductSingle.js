@@ -38,7 +38,7 @@ const ProductSingle = () => {
 
   const close = () => {
     setShowPopup(false);
-  }
+  };
 
   if (tuotteet) {
     tuoteData = (
@@ -48,9 +48,12 @@ const ProductSingle = () => {
             .filter((item) => item.id === 1)
             .map((item) => {
               return (
-                <button onClick={() => {
-                  setPopupImg(item.kuva);
-                  popupHandler()}}>
+                <button
+                  onClick={() => {
+                    setPopupImg(item.kuva);
+                    popupHandler();
+                  }}
+                >
                   <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
                 </button>
               );
@@ -61,9 +64,12 @@ const ProductSingle = () => {
           .map((item) => {
             return (
               <ul key={item.id}>
-                <button onClick={() => {
-                  setPopupImg(item.kuva);
-                  popupHandler()}}>
+                <button
+                  onClick={() => {
+                    setPopupImg(item.kuva);
+                    popupHandler();
+                  }}
+                >
                   <img src={item.kuva} alt="tuotteen kuva" key={item.id} />
                 </button>
               </ul>
@@ -87,7 +93,7 @@ const ProductSingle = () => {
 
   return (
     <main>
-      {showPopup === true && <Popup />}
+      {showPopup && <Popup />}
       {tuoteData}
     </main>
   );
