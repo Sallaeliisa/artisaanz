@@ -1,13 +1,14 @@
 import React from "react";
-import AddProductForAdmin from "./AddProductForAdmin";
-import ProductsForAdmin from "./ProductsForAdmin";
+import AddProductForAdmin from "../Components/AddProductForAdmin";
+import ProductsForAdmin from "../Components/ProductsForAdmin";
+import Container from "react-bootstrap/Container";
 
 const Admin = () => {
   return (
-    <div>
+    <Container fluid>
       <ProductsForAdmin />
       <AddProductForAdmin />
-    </div>
+    </Container>
   );
 };
 

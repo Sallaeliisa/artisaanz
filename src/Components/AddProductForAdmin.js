@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 import ProductsForAdmin from "./ProductsForAdmin";
 
 import "../App.css";
-import Products from "./Products";
+import Products from "../pages/Products";
 
 const AddProductForAdmin = () => {
   const [data, setData] = useState({
@@ -46,7 +46,6 @@ const AddProductForAdmin = () => {
 
   return (
     <>
-      <ProductsForAdmin />
       <div>
         <Form onSubmit={submitData} className="form">
           <Form.Group>

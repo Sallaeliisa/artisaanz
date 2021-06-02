@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "../Components/ProductCard";
+import ProductCard from "./ProductCard";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
-import ProductSingle from "./ProductSingle";
+import ProductSingleForAdmin from "../pages/ProductSingleForAdmin";
 import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/esm/Row";
 
 const ProductsForAdmin = () => {
   const [tuote, setTuote] = useState([]);
@@ -57,7 +58,7 @@ const ProductsForAdmin = () => {
     <div id="products">
       <Switch>
         <Route path="/tuotteet/:id">
-          <ProductSingle />
+          <ProductSingleForAdmin />
         </Route>
         <Route path="/:tuotteet" exact>
           <SearchBox search={searchValueHandler} />
