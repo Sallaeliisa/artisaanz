@@ -8,7 +8,7 @@ const SearchBoxDropdown = ({ search }) => {
       <div className="mr-sm-2">
         <input
           className="secondSearchBox"
-          class="form-control"
+          className="form-control"
           list="datalistOptions"
           id="exampleDataList"
           placeholder="Etsi kategorialla..."

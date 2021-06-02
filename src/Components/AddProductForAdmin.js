@@ -4,12 +4,12 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import ProductsForAdmin from "../Components/ProductsForAdmin";
+import ProductsForAdmin from "./ProductsForAdmin";
 
 import "../App.css";
-import Products from "./Products";
+import Products from "../pages/Products";
 
-const AddProduct = () => {
+const AddProductForAdmin = () => {
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -46,8 +46,7 @@ const AddProduct = () => {
 
   return (
     <>
-      <ProductsForAdmin />
-      <main>
+      <div>
         <Form onSubmit={submitData} className="form">
           <Form.Group>
             <Form.Label htmlFor="">Tuote:</Form.Label>
@@ -107,18 +106,18 @@ const AddProduct = () => {
             <Form.Label htmlFor="">Hinta:</Form.Label>
             <Form.Control type="number" name="hinta" onChange={changeData} />
           </Form.Group>
-          <Form.Group>
+          {/* <Form.Group>
             <Form.Label htmlFor="">Artesaani:</Form.Label>
             <Form.Control type="text" name="artesaani" onChange={changeData} />
-          </Form.Group>
+          </Form.Group> */}
 
           <Button type="submit" className="addbtn" value="Send data">
             Lisää tuote
           </Button>
         </Form>
-      </main>
+      </div>
     </>
   );
 };
 
-export default AddProduct;
+export default AddProductForAdmin;
