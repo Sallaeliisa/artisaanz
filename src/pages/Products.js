@@ -78,6 +78,7 @@ const Products = () => {
         <Route path="/tuotteet" exact>
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
+          {seller && <button className="backbtn" onClick={() => history.goBack()}>Takaisin</button>}
           {loading === false && (
             <Spinner
               className="productSpinner"
