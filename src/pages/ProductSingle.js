@@ -10,7 +10,6 @@ const ProductSingle = () => {
   const [tuotteet, setTuotteet] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const [popupImg, setPopupImg] = useState();
-  const [popupImgId, setPopupImgId] = useState();
   let { id } = useParams();
   const history = useHistory();
 
@@ -29,16 +28,6 @@ const ProductSingle = () => {
       <div className="popup">
         <button onClick={close}>Sulje</button>
         <img src={popupImg} alt="iso tuotekuva" />
-        <button onClick={() => {
-          console.log("clicked")
-          tuotteet.kuva
-            .filter((item) => popupImgId === item.id+1)
-            .map((item) => {
-              console.log(popupImgId);
-              setPopupImg(item.kuva);
-              return <img src={popupImg} alt="iso tuotekuva" />
-            })
-        }}>Next</button>
       </div>
     );
   };

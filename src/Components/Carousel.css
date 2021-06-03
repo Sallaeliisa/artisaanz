@@ -1,0 +1,18 @@
+.container {
+    bottom: 3rem;
+    position: absolute;
+    height: 250px;
+    min-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgCarousel {
+    margin-top: 1rem;
+    height: 250px;
+    width: 20%;
+    overflow: hidden;
+}
+
+
+

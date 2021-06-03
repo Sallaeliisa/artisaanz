@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import ImgCarousel from "../Components/ImgCarousel";
 
 const Makers = () => {
   return (
@@ -48,6 +49,11 @@ const Makers = () => {
           </Card.Text>
         </Card.Body>
       </Card>
+      <div className="container">
+      <div className="imgCarousel">
+      <ImgCarousel />
+      </div>
+      </div>
     </main>
   );
 };
