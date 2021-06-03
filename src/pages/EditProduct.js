@@ -26,8 +26,6 @@ const EditProduct = () => {
   let { id } = useParams();
   const history = useHistory();
   console.log("product id: " + id);
-  id = 4;
-  console.log('hardcoded id to "Kokeilu", eli ' + id);
 
   useEffect(() => {
     if (!tuotteet) {
@@ -91,6 +89,7 @@ const EditProduct = () => {
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
+        <h3>{tuotteet.nimi}</h3>
         <Form onSubmit={editData} className="form">
           <Form.Group>
             <Form.Label htmlFor="">Tuotteen nimi:</Form.Label>
@@ -156,7 +155,7 @@ const EditProduct = () => {
               type="number"
               name="hinta"
               placeholder={tuotteet.hinta}
-              //onChange={changeData}
+              onChange={changeData}
             />
           </Form.Group>
           <Form.Group>
@@ -167,7 +166,7 @@ const EditProduct = () => {
               type="text"
               placeholder={tuotteet.artesaani}
               name="artesaani"
-              //onChange={changeData}
+              onChange={changeData}
             />
           </Form.Group>
           <button type="submit" className="addbtn" value="Send data">

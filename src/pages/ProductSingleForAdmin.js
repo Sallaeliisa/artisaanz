@@ -39,9 +39,9 @@ const ProductSingleForAdmin = () => {
     console.log("product removed from database");
   };
 
-  const editProduct = () => {
-    alert("Tästä pääset muokkaamaan tuotetta jatkossa");
-  };
+  // const editProduct = () => {
+  //   alert("Tästä pääset muokkaamaan tuotetta jatkossa");
+  // };
   const popupHandler = () => {
     setShowPopup(true);
   };
@@ -97,7 +97,7 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
-        <button className="backbtn" onClick={editProduct}>
+        <button className="backbtn">
           <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
         {/* <button>
