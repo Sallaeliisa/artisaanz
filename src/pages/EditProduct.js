@@ -83,6 +83,15 @@ const EditProduct = () => {
           data.kategoria
       );
     }
+    if (
+      data.nimi === "" &&
+      data.kuvaus === "" &&
+      data.hinta === "" &&
+      data.kategoria === "" &&
+      data.artesaani === ""
+    ) {
+      alert("Et muuttanut mitään");
+    }
     console.log("Done!");
   };
 
