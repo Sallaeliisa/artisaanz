@@ -7,6 +7,7 @@ import About from "../pages/About";
 import AddProduct from "../pages/AddProduct";
 import Admin from "../pages/Admin";
 import ProductsForAdmin from "./ProductsForAdmin";
+import EditProduct from "../pages/EditProduct";
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
         <Route path="/myyjälle" component={Admin} />
+        <Route path="/muokkaa" component={EditProduct} />
       </Switch>
     </main>
   );
