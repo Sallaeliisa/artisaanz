@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLocation } from "react";
 import ProductCard from "../Components/ProductCard";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
 import ProductSingle from "./ProductSingle";
 import { Switch, Route } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
@@ -12,13 +13,28 @@ const Products = () => {
   const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [seller, setSeller] = useState();
+
+  const history = useHistory();
+
+  useEffect(()=> {
+    if(history.location.state) {
+    setSeller(history.location.state.seller);
+  }
+  });
 
   const productFilter = tuote.filter((tuote) => {
+    if(seller) {
+    return (
+      tuote.artesaani.toLowerCase().includes(seller.toLowerCase())
+    );
+  } else {
     return (
       tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
       tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
       tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
     );
+  }
   });
 
   useEffect(() => {
