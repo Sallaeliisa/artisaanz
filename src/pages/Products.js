@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLocation } from "react";
+import React, { useState, useEffect } from "react";
 import ProductCard from "../Components/ProductCard";
 import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";

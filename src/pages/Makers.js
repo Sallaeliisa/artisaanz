@@ -3,6 +3,7 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Makers = () => {
+  
   return (
     <main className="makers">
       <Card className="makersCard" style={{ width: "50rem" }}>
