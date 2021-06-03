@@ -106,6 +106,7 @@ const EditProduct = () => {
               type="text"
               width="10px"
               name="nimi"
+              maxlength="20"
               placeholder={tuotteet.nimi}
               onChange={changeData}
             />
@@ -127,6 +128,7 @@ const EditProduct = () => {
             <Form.Label htmlFor="">Tuotteen kuvaus:</Form.Label>
             <Form.Control
               as="textarea"
+              maxlength="255"
               rows={3}
               type="text"
               name="kuvaus"
@@ -163,6 +165,8 @@ const EditProduct = () => {
             <Form.Control
               type="number"
               name="hinta"
+              min="1"
+              max="999"
               placeholder={tuotteet.hinta}
               onChange={changeData}
             />
@@ -175,6 +179,7 @@ const EditProduct = () => {
               type="text"
               placeholder={tuotteet.artesaani}
               name="artesaani"
+              maxlength="40"
               onChange={changeData}
             />
           </Form.Group>
