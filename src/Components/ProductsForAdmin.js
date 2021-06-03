@@ -38,8 +38,7 @@ const ProductsForAdmin = () => {
 
   const filteredProducts = productFilter.map((tuote) => {
     return (
-      //<div key={tuote.id}>
-      <Container fluid>
+      <div key={tuote.id}>
         <ProductCardForAdmin
           id={tuote.id}
           key={tuote.id}
@@ -49,8 +48,7 @@ const ProductsForAdmin = () => {
           hinta={tuote.hinta}
           kategoria={tuote.kategoria}
         />
-      </Container>
-      //</div>
+      </div>
     );
   });
 

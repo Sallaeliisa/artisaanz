@@ -33,8 +33,10 @@ const ProductSingleForAdmin = () => {
     );
   };
   const removeProduct = () => {
-    alert("This will delete the item from database in the future");
+    axios.delete("https://artisaanz.herokuapp.com/product/remove/" + id);
+    console.log("product removed from database");
   };
+
   const editProduct = () => {
     alert("Tästä pääset muokkaamaan tuotetta jatkossa");
   };
