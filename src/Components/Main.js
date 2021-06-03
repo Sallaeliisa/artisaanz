@@ -20,7 +20,7 @@ const Main = () => {
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
         <Route path="/myyjälle" component={Admin} />
-        <Route path="/muokkaa" component={EditProduct} />
+        <Route path="/muokkaa/:id" component={EditProduct} />
       </Switch>
     </main>
   );
