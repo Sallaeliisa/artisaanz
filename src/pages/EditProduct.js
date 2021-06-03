@@ -20,6 +20,7 @@ const EditProduct = () => {
     kuvaus: "",
     hinta: "",
     artesaani: "",
+    kategoria: "",
   });
   const [tuotteet, setTuotteet] = useState();
   let { id } = useParams();
@@ -76,6 +77,14 @@ const EditProduct = () => {
           data.artesaani
       );
     }
+    if (data.kategoria !== "") {
+      axios.post(
+        "https://artisaanz.herokuapp.com/product/editkategoria/" +
+          id +
+          "/" +
+          data.kategoria
+      );
+    }
     console.log("Done!");
   };
 
@@ -94,7 +103,7 @@ const EditProduct = () => {
             />
           </Form.Group>
           <br></br>
-          <select name="kategoria" required>
+          <select name="kategoria" onChange={changeData} required>
             <option value="noValue">Valitse Kategoria:</option>
             <option value="Pussukat">Pussukat</option>
             <option value="Laukut">Laukut</option>
