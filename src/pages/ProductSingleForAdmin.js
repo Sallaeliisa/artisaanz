@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Components/ProductSingle.css";
 import Button from "react-bootstrap/Button";
+import EditProduct from "./EditProduct";
+import { Switch, Route } from "react-router-dom";
 
 const ProductSingleForAdmin = () => {
   const [tuotteet, setTuotteet] = useState();
@@ -96,8 +98,14 @@ const ProductSingleForAdmin = () => {
           Takaisin
         </button>
         <button className="backbtn" onClick={editProduct}>
-          Muokkaa
+          <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
+        {/* <button>
+          testinappula routilla
+          <Route path="/muokkaa/:id">
+            <EditProduct />
+          </Route>
+        </button> */}
         <button className="backbtn" onClick={removeProduct}>
           Poista tämä tuote
         </button>
