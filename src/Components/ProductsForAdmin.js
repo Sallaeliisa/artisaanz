@@ -26,12 +26,9 @@ const ProductsForAdmin = () => {
 
   const productFilter = tuote.filter((tuote) => {
     if (seller) {
-      return tuote.artesaani.toLowerCase().includes(seller.toLowerCase());
-    } else {
       return (
-        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-        tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
-        tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
+        tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
+        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase())
       );
     }
   });
