@@ -1,34 +1,48 @@
-/* CSS, joka on nopeasti kyhätty yksittäisen tuotesivun tekoa helpottamaan. Voi muokata tai poistaa muun stailauksen yhteydessä, jos on tarpeeton */
-
 .singleProduct img {
+  height: 100%;
+  width: 100%;
+}
+
+.singleProduct button {
   height: 30%;
   width: 25%;
   float: left;
-  padding: 20px;
+  border: none;
+  margin: 2rem;
+  outline: 3px solid #0d0d0d;
 }
 
 .singleProduct {
   padding: 30px 70px;
 }
 
-.backbtn {
+.singleProduct a {
+  color: #a8611f;
+  font-weight: 800;
+}
+
+.mainImage {
+  margin: 20px;
+}
+
+#backbtn {
   height: 40px;
   width: 200px;
-  background-color: #4f5b3e;
-  outline: 5px solid #4f5b3e;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
   border: 3px solid #fff;
   color: #fff;
-  font-family: "EB Garamond", serif;
+  font-family: "Dosis", sans-serif;
   font-size: 1.5rem;
 }
 
-.backbtn:hover {
+#backbtn:hover {
   height: 40px;
   width: 200px;
   background-color: #fff;
-  border: 1px solid #4f5b3e;
-  color: #4f5b3e;
-  font-family: "EB Garamond", serif;
+  border: 1px solid #583a22;
+  color: #583a22;
+  font-family: "Dosis", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
 }
