@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
 import ProductsForAdmin from "../Components/ProductsForAdmin";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
@@ -95,6 +97,15 @@ const EditProduct = () => {
     console.log("Done!");
   };
 
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Tuote päivitetty</Popover.Title>
+      <Popover.Content>
+        Tekemäsi muutokset tallennettiin onnistuneesti.
+      </Popover.Content>
+    </Popover>
+  );
+
   if (tuotteet) {
     tuoteData = (
       <div className="singleProduct">
@@ -183,9 +194,11 @@ const EditProduct = () => {
               onChange={changeData}
             />
           </Form.Group>
+          <OverlayTrigger trigger="click" placement="left" overlay={popover}>
           <button type="submit" className="addbtn" value="Send data">
             Päivitä tuote
           </button>
+          </OverlayTrigger>
           <button className="backbtn" onClick={() => history.goBack()}>
             Takaisin
           </button>
