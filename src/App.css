@@ -56,10 +56,10 @@ main {
 
 .makers {
   display: grid;
-  grid-template-columns: repeat(2, 50rem);
+  grid-template-columns: repeat(3, 30rem);
   grid-auto-rows: auto;
   grid-gap: 3rem;
-  min-height: 500px;
+  min-height: 250px;
   margin: 2rem 0 0 3rem;
 }
 
@@ -74,6 +74,7 @@ main {
   color: #a8611f;
   text-decoration: none;
   font-weight: 900;
+  display: block;
 }
 
 .makersCard a:hover {
@@ -96,5 +97,43 @@ main {
 @media (max-width: 899px) {
   main {
     padding-top: 50px;
+  }
+
+  .makers {
+    display: grid;
+    grid-template-columns: repeat(1, 30rem);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+
+  .herobanner img {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    min-height: calc(100vh - 190px);
+    padding-top: 20px;
+    max-width: 650px;
+  }
+
+  .welcometxt {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcometxt {
+    max-width: 300px;
+  }
+
+  .herobanner img {
+    width: 500px;
   }
 }

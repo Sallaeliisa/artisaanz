@@ -20,6 +20,8 @@
   color: #0d0d0d;
   font-size: 1.3rem;
   font-weight: 600;
+  background-image: url("../assets/brush.png");
+  z-index: 1;
 }
 
 .productCard a:hover {
@@ -37,7 +39,7 @@
 @media (max-width: 899px) {
   .filteredProducts {
     display: grid;
-    grid-template-columns: repeat(2, 300px);
+    grid-template-columns: repeat(1, 400px);
     grid-auto-rows: auto;
     grid-gap: 3rem;
   }
@@ -48,9 +50,27 @@
   }
   .productCard {
     max-height: 450px;
-    width: 300px;
-    margin-left: 50px;
+    width: 400px;
+    margin-left: 90px;
     padding: 1rem;
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+  }
+  .productCard img {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+  .productCard {
+    max-height: 350px;
+    width: 300px;
+    margin-left: 40px;
+    padding: 1rem;
+    font-size: 1rem;
   }
 }

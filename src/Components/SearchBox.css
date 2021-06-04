@@ -4,6 +4,30 @@
   margin: 0 auto;
 }
 
-.secondSearchBox input {
+.secondSearchBox {
   width: 700px;
+  height: 40px;
+  margin: 20px 0 20px 0;
+}
+
+@media (max-width: 899px) {
+  .mr-sm-2 {
+    width: 500px;
+  }
+
+  .secondSearchBox {
+    width: 500px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mr-sm-2 {
+    width: 300px;
+  }
+
+  .secondSearchBox {
+    width: 300px;
+    height: 40px;
+  }
 }
