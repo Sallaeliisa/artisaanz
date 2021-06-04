@@ -133,22 +133,11 @@ const AddProductForAdmin = () => {
               onChange={changeData}
             />
           </Form.Group>
-<<<<<<< HEAD
-          <Button type="submit" className="addbtn" value="Send data">
-            Lisää tuote
-          </Button>
-=======
-          {/* <Form.Group>
-            <Form.Label htmlFor="">Artesaani:</Form.Label>
-            <Form.Control type="text" name="artesaani" onChange={changeData} />
-          </Form.Group> */}
-
           <OverlayTrigger trigger="click" placement="left" overlay={popover}>
             <Button type="submit" className="addbtn" value="Send data">
               Lisää tuote
             </Button>
           </OverlayTrigger>
->>>>>>> 31539e8af1e1d020708d90691442cd18661eb23e
         </Form>
       </div>
     </>
