@@ -1,7 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const Makers = () => {
+  
   return (
     <main className="makers">
       <Card className="makersCard" style={{ width: "50rem" }}>
@@ -15,6 +17,11 @@ const Makers = () => {
             on runsaasti aikaa tehdä erilaisia tuotteita. Ohessa olevasta
             linkistä löydät lisää tuotoksiani.
           </Card.Text>
+          <Link
+            to={{ pathname: "/tuotteet", state: { seller: "Riitta Järventie" } }}
+          >
+            Artesaanin tuotteet
+          </Link>
           <Card.Link href="https://pussukat.wordpress.com/" target="_blank">
             Pussukat kotisivu
           </Card.Link>
@@ -32,6 +39,11 @@ const Makers = () => {
             näyttävät ja maukkaat leivät ovat intohimoni. Kehittelen jatkuvasti
             uusia reseptejä ja makuvivahteita.
           </Card.Text>
+          <Link
+            to={{ pathname: "/tuotteet", state: { seller: "Akseli Miettinen" } }}
+          >
+            Artesaanin tuotteet
+          </Link>
         </Card.Body>
       </Card>
 
@@ -46,6 +58,11 @@ const Makers = () => {
             tahtia että tutut ja sukulaiset ovat omansa jo saaneet. Nyt
             lopuillekin sukkapareille toivottavasti löytyy tätä kautta oma koti.{" "}
           </Card.Text>
+          <Link
+            to={{ pathname: "/tuotteet", state: { seller: "Salla Vuorikko" } }}
+          >
+            Artesaanin tuotteet
+          </Link>
         </Card.Body>
       </Card>
     </main>

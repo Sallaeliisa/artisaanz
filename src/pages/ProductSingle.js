@@ -26,10 +26,8 @@ const ProductSingle = () => {
   const Popup = () => {
     return (
       <div className="popup">
-        <button className="closebtn" onClick={close}>
-          Sulje
-        </button>
-        <img src={popupImg} alt="iso tuotekuva" />
+        {/* <button onClick={close}>Sulje</button> */}
+        <img src={popupImg} onClick={close} alt="iso tuotekuva" />
       </div>
     );
   };
