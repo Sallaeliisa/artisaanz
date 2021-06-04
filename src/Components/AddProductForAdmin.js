@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
 import ProductsForAdmin from "./ProductsForAdmin";
 import { useHistory } from "react-router-dom";
 
@@ -53,6 +55,13 @@ const AddProductForAdmin = () => {
     axios.post("https://artisaanz.herokuapp.com/product/add", data);
     e.target.reset();
   };
+
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Tuote lisätty</Popover.Title>
+      <Popover.Content>Uusi tuote lisättiin onnistuneesti.</Popover.Content>
+    </Popover>
+  );
 
   return (
     <>
@@ -124,9 +133,22 @@ const AddProductForAdmin = () => {
               onChange={changeData}
             />
           </Form.Group>
+<<<<<<< HEAD
           <Button type="submit" className="addbtn" value="Send data">
             Lisää tuote
           </Button>
+=======
+          {/* <Form.Group>
+            <Form.Label htmlFor="">Artesaani:</Form.Label>
+            <Form.Control type="text" name="artesaani" onChange={changeData} />
+          </Form.Group> */}
+
+          <OverlayTrigger trigger="click" placement="left" overlay={popover}>
+            <Button type="submit" className="addbtn" value="Send data">
+              Lisää tuote
+            </Button>
+          </OverlayTrigger>
+>>>>>>> 31539e8af1e1d020708d90691442cd18661eb23e
         </Form>
       </div>
     </>
