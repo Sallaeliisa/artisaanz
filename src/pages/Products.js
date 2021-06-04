@@ -29,6 +29,12 @@ const Products = () => {
         tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
         tuote.nimi.toLowerCase().includes(searchInput.toLowerCase())
       );
+    } else {
+      return (
+        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
+        tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
+        tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
+      );
     }
   });
 
