@@ -31,3 +31,12 @@ header a:hover {
 .logo {
   width: 300px;
 }
+
+@media (max-width: 899px) {
+  .logo {
+    width: 200px;
+  }
+  header a {
+    font-size: 1.4rem;
+  }
+}

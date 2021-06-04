@@ -7,7 +7,7 @@ const Landing = () => {
       <div className="herobanner-cont">
         <img className="herobanner" src={herobanner} alt="herobanner img" />
       </div>
-      <>
+      <div className="welcometxt">
         <h1>Tervetuloa</h1>
         <p>
           Tanskalaisilla oli "hygge" jo aikoja sitten, mutta myös me suomalaiset
@@ -19,7 +19,7 @@ const Landing = () => {
           enempää ei voi sukulaisille ja ystäville antaa samoja lahjoja
           merkkipäivästä toiseen.
         </p>
-      </>
+      </div>
     </main>
   );
 };
