@@ -4,12 +4,6 @@ import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 
 const Navigation = () => {
-  const [admin, setAdmin] = useState("");
-  const handleSelect = (e) => {
-    console.log(e);
-    setAdmin(e);
-  };
-
   return (
     <nav>
       <ul>
@@ -27,29 +21,41 @@ const Navigation = () => {
         </li>
         <li>
           <Dropdown>
-            <DropdownButton
-              alignRight
-              title="Valitse myyjä"
-              id="admin select"
-              onSelect={handleSelect}
-            >
-              <Dropdown.Item eventKey="Riitta Järventie">
-                Riitta Järventie
+            <DropdownButton alignRight title="Valitse myyjä">
+              <Dropdown.Item>
+                <Link
+                  to={{
+                    pathname: "/munTuotteet",
+                    state: { seller: "Riitta Järventie" },
+                  }}
+                >
+                  Riitta Järventie
+                </Link>
               </Dropdown.Item>
-              <Dropdown.Item
-                eventKey="Akseli Miettinen"
-                href="/myyjälle/Akseli"
-              >
-                Akseli Miettinen
+              <Dropdown.Item>
+                <Link
+                  to={{
+                    pathname: "/munTuotteet",
+                    state: { seller: "Akseli Miettinen" },
+                  }}
+                >
+                  Akseli Miettinen
+                </Link>
               </Dropdown.Item>
-              <Dropdown.Item eventKey="Salla Vuorikko" href="/myyjälle">
-                Salla Vuorikko
+              <Dropdown.Item>
+                <Link
+                  to={{
+                    pathname: "/munTuotteet",
+                    state: { seller: "Salla Vuorikko" },
+                  }}
+                >
+                  Salla Vuorikko
+                </Link>
               </Dropdown.Item>
             </DropdownButton>
           </Dropdown>
         </li>
       </ul>
-      <h3> {admin}</h3>
     </nav>
   );
 };

@@ -29,8 +29,7 @@ const ProductSingleForAdmin = () => {
   const Popup = () => {
     return (
       <div className="popup">
-        <button onClick={close}>Sulje</button>
-        <img src={popupImg} alt="iso tuotekuva" />
+        <img src={popupImg} alt="iso tuotekuva" onClick={close} />
       </div>
     );
   };
@@ -39,9 +38,6 @@ const ProductSingleForAdmin = () => {
     console.log("product removed from database");
   };
 
-  // const editProduct = () => {
-  //   alert("Tästä pääset muokkaamaan tuotetta jatkossa");
-  // };
   const popupHandler = () => {
     setShowPopup(true);
   };
@@ -100,12 +96,6 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn">
           <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
-        {/* <button>
-          testinappula routilla
-          <Route path="/muokkaa/:id">
-            <EditProduct />
-          </Route>
-        </button> */}
         <button className="backbtn" onClick={removeProduct}>
           Poista tämä tuote
         </button>
