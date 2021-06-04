@@ -84,7 +84,7 @@ const ProductSingle = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="backbtn" onClick={() => history.goBack()}>
+        <button id="backbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
       </div>

@@ -3,10 +3,9 @@ import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
 
 const Makers = () => {
-  
   return (
     <main className="makers">
-      <Card className="makersCard" style={{ width: "50rem" }}>
+      <Card className="makersCard" style={{ width: "30rem" }}>
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -18,7 +17,10 @@ const Makers = () => {
             linkistä löydät lisää tuotoksiani.
           </Card.Text>
           <Link
-            to={{ pathname: "/tuotteet", state: { seller: "Riitta Järventie" } }}
+            to={{
+              pathname: "/tuotteet",
+              state: { seller: "Riitta Järventie" },
+            }}
           >
             Artesaanin tuotteet
           </Link>
@@ -28,7 +30,7 @@ const Makers = () => {
         </Card.Body>
       </Card>
 
-      <Card className="makersCard" style={{ width: "50rem" }}>
+      <Card className="makersCard" style={{ width: "30rem" }}>
         <Card.Body>
           <Card.Title>Akseli Miettinen</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -40,14 +42,17 @@ const Makers = () => {
             uusia reseptejä ja makuvivahteita.
           </Card.Text>
           <Link
-            to={{ pathname: "/tuotteet", state: { seller: "Akseli Miettinen" } }}
+            to={{
+              pathname: "/tuotteet",
+              state: { seller: "Akseli Miettinen" },
+            }}
           >
             Artesaanin tuotteet
           </Link>
         </Card.Body>
       </Card>
 
-      <Card className="makersCard" style={{ width: "50rem" }}>
+      <Card className="makersCard" style={{ width: "30rem" }}>
         <Card.Body>
           <Card.Title>Salla Vuorikko</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

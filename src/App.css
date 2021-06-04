@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=EB+Garamond&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Dosis:wght@300&display=swap");
 
 * {
   margin: 0;
@@ -50,26 +50,31 @@ main {
   padding-top: 10px;
   min-height: calc(100vh - 140px);
   background-color: #fffffb;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600;
 }
 
 .makers {
   display: grid;
-  grid-template-columns: repeat(2, 50rem);
+  grid-template-columns: repeat(3, 30rem);
   grid-auto-rows: auto;
   grid-gap: 3rem;
-  min-height: 500px;
+  min-height: 250px;
   margin: 2rem 0 0 3rem;
 }
 
 .makersCard {
-  border: 2px solid #c7c8a8;
-  box-shadow: 0 0 8px #4f5b3e inset;
+  border: 2px solid #583a22;
+  box-shadow: 2px 2px 5px #583a22;
   border-radius: 10px;
   color: #0d0d0d;
 }
 
 .makersCard a {
-  color: #4f5b3e;
+  color: #a8611f;
+  text-decoration: none;
+  font-weight: 900;
+  display: block;
 }
 
 .makersCard a:hover {
@@ -80,8 +85,8 @@ main {
 .addbtn {
   height: 45px;
   width: 200px;
-  background-color: #4f5b3e;
-  outline: 5px solid #4f5b3e;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
   border: 3px solid #fff;
   color: #fff;
   font-family: "EB Garamond", serif;
@@ -92,5 +97,43 @@ main {
 @media (max-width: 899px) {
   main {
     padding-top: 50px;
+  }
+
+  .makers {
+    display: grid;
+    grid-template-columns: repeat(1, 30rem);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+
+  .herobanner img {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    min-height: calc(100vh - 190px);
+    padding-top: 20px;
+    max-width: 650px;
+  }
+
+  .welcometxt {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 500px;
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcometxt {
+    max-width: 300px;
+  }
+
+  .herobanner img {
+    width: 500px;
   }
 }

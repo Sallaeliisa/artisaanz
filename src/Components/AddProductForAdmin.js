@@ -119,7 +119,7 @@ const AddProductForAdmin = () => {
             );
           })}
           <Button className="addbtn" onClick={addMore}>
-            Lisää kuva
+            Lisää uusi kuva
           </Button>
           <div>
             <h1> </h1>
