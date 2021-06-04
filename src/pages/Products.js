@@ -16,6 +16,7 @@ const Products = () => {
   const [seller, setSeller] = useState();
 
   const history = useHistory();
+  let dropdownShow = "";
 
   useEffect(() => {
     if (history.location.state) {
@@ -66,12 +67,13 @@ const Products = () => {
       </div>
     );
   });
+  if (!seller) {
+    dropdownShow = <SearchBoxDropdown search={searchValueHandler} />;
+  }
 
   return (
     <main id="products">
-      <>
-        <SearchBoxDropdown search={searchValueHandler} />
-      </>
+      <>{dropdownShow}</>
       <Switch>
         <Route path="/tuotteet/:id">
           <ProductSingle />
