@@ -17,24 +17,25 @@ const Products = () => {
 
   const history = useHistory();
 
-  useEffect(()=> {
-    if(history.location.state) {
-    setSeller(history.location.state.seller);
-  }
+  useEffect(() => {
+    if (history.location.state) {
+      setSeller(history.location.state.seller);
+    }
   });
 
   const productFilter = tuote.filter((tuote) => {
-    if(seller) {
-    return (
-      tuote.artesaani.toLowerCase().includes(seller.toLowerCase())
-    );
-  } else {
-    return (
-      tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
-    );
-  }
+    if (seller) {
+      return (
+        tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
+        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    } else {
+      return (
+        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
+        tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
+        tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
   });
 
   useEffect(() => {
@@ -78,7 +79,11 @@ const Products = () => {
         <Route path="/tuotteet" exact>
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
-          {seller && <button className="backbtn" onClick={() => history.goBack()}>Takaisin</button>}
+          {seller && (
+            <button className="backbtn" onClick={() => history.goBack()}>
+              Takaisin
+            </button>
+          )}
           {loading === false && (
             <Spinner
               className="productSpinner"

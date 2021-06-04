@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import ProductCardForAdmin from "./ProductCardForAdmin";
-import SearchBoxDropdown from "../Components/SearchBoxDropdown";
 import SearchBox from "../Components/SearchBox";
 import ProductSingleForAdmin from "../pages/ProductSingleForAdmin";
 import { Switch, Route } from "react-router-dom";
@@ -9,18 +8,29 @@ import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/esm/Row";
+import { useHistory } from "react-router-dom";
 
 const ProductsForAdmin = () => {
   const [tuote, setTuote] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const [seller, setSeller] = useState();
+
+  const history = useHistory();
+
+  useEffect(() => {
+    if (history.location.state) {
+      setSeller(history.location.state.seller);
+    }
+  });
 
   const productFilter = tuote.filter((tuote) => {
-    return (
-      tuote.nimi.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.artesaani.toLowerCase().includes(searchInput.toLowerCase()) ||
-      tuote.kategoria.toLowerCase().includes(searchInput.toLowerCase())
-    );
+    if (seller) {
+      return (
+        tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
+        tuote.nimi.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
   });
 
   useEffect(() => {

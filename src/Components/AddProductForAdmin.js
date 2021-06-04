@@ -1,15 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
 import ProductsForAdmin from "./ProductsForAdmin";
+import { useHistory } from "react-router-dom";
 
 import "../App.css";
 import Products from "../pages/Products";
 
 const AddProductForAdmin = () => {
+  const [seller, setSeller] = useState();
+  const history = useHistory();
+
+  useEffect(() => {
+    if (history.location.state) {
+      setSeller(history.location.state.seller);
+    }
+  });
+  console.log("Current user: " + seller);
+
   const [data, setData] = useState({
     kuva: [],
     nimi: "",
@@ -17,7 +30,6 @@ const AddProductForAdmin = () => {
     hinta: "",
     artesaani: "",
   });
-
   const [kuvat, setKuvat] = useState([{ id: 1 }]);
 
   const changeData = (e) => {
@@ -37,12 +49,19 @@ const AddProductForAdmin = () => {
     const newKuva = { id: kuvat.length + 1 };
     setKuvat((prevState) => [...prevState, newKuva]);
   };
-
   const submitData = (e) => {
     e.preventDefault();
+    data.artesaani = seller;
     axios.post("https://artisaanz.herokuapp.com/product/add", data);
     e.target.reset();
   };
+
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Tuote lisätty</Popover.Title>
+      <Popover.Content>Uusi tuote lisättiin onnistuneesti.</Popover.Content>
+    </Popover>
+  );
 
   return (
     <>
@@ -54,6 +73,7 @@ const AddProductForAdmin = () => {
               type="text"
               width="10px"
               name="nimi"
+              required
               onChange={changeData}
             />
           </Form.Group>
@@ -77,6 +97,7 @@ const AddProductForAdmin = () => {
               rows={3}
               type="text"
               name="kuvaus"
+              required
               onChange={changeData}
             />
           </Form.Group>
@@ -89,6 +110,7 @@ const AddProductForAdmin = () => {
                     <Form.Control
                       type="text"
                       name="kuva"
+                      required
                       onChange={(e) => changeKuvaData(e, i)}
                     />
                   </Col>
@@ -104,16 +126,18 @@ const AddProductForAdmin = () => {
           </div>
           <Form.Group>
             <Form.Label htmlFor="">Hinta:</Form.Label>
-            <Form.Control type="number" name="hinta" onChange={changeData} />
+            <Form.Control
+              type="number"
+              name="hinta"
+              required
+              onChange={changeData}
+            />
           </Form.Group>
-          {/* <Form.Group>
-            <Form.Label htmlFor="">Artesaani:</Form.Label>
-            <Form.Control type="text" name="artesaani" onChange={changeData} />
-          </Form.Group> */}
-
-          <Button type="submit" className="addbtn" value="Send data">
-            Lisää tuote
-          </Button>
+          <OverlayTrigger trigger="click" placement="left" overlay={popover}>
+            <Button type="submit" className="addbtn" value="Send data">
+              Lisää tuote
+            </Button>
+          </OverlayTrigger>
         </Form>
       </div>
     </>
