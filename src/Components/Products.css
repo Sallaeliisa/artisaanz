@@ -56,3 +56,21 @@
     font-size: 1.2rem;
   }
 }
+
+@media (max-width: 576px) {
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 300px);
+  }
+  .productCard img {
+    max-height: 200px;
+    padding-bottom: 10px;
+  }
+  .productCard {
+    max-height: 350px;
+    width: 300px;
+    margin-left: 40px;
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

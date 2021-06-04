@@ -74,6 +74,7 @@ main {
   color: #a8611f;
   text-decoration: none;
   font-weight: 900;
+  display: block;
 }
 
 .makersCard a:hover {
@@ -124,5 +125,15 @@ main {
     margin: 0 auto;
     max-width: 500px;
     padding-top: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  .welcometxt {
+    max-width: 300px;
+  }
+
+  .herobanner img {
+    width: 500px;
   }
 }
