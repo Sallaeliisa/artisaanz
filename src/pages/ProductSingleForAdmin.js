@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
 import "../Components/ProductSingle.css";
 import Button from "react-bootstrap/Button";
 import EditProduct from "./EditProduct";
@@ -45,6 +47,15 @@ const ProductSingleForAdmin = () => {
   const close = () => {
     setShowPopup(false);
   };
+
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">Tuote poistettu</Popover.Title>
+      <Popover.Content>
+        Tämä tuote poistettiin onnistuneesti.
+      </Popover.Content>
+    </Popover>
+  );
 
   if (tuotteet) {
     tuoteData = (
@@ -96,9 +107,11 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn">
           <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
+        <OverlayTrigger trigger="click" placement="left" overlay={popover}>
         <button className="backbtn" onClick={removeProduct}>
           Poista tämä tuote
         </button>
+        </OverlayTrigger>
       </div>
     );
   }
