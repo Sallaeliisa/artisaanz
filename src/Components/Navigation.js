@@ -25,7 +25,7 @@ const Navigation = () => {
               <Dropdown.Item>
                 <Link
                   to={{
-                    pathname: "/munTuotteet",
+                    pathname: "/myyjälle",
                     state: { seller: "Riitta Järventie" },
                   }}
                 >
@@ -35,7 +35,7 @@ const Navigation = () => {
               <Dropdown.Item>
                 <Link
                   to={{
-                    pathname: "/munTuotteet",
+                    pathname: "/myyjälle",
                     state: { seller: "Akseli Miettinen" },
                   }}
                 >
@@ -45,7 +45,7 @@ const Navigation = () => {
               <Dropdown.Item>
                 <Link
                   to={{
-                    pathname: "/munTuotteet",
+                    pathname: "/myyjälle",
                     state: { seller: "Salla Vuorikko" },
                   }}
                 >
