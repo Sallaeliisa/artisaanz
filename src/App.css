@@ -140,4 +140,16 @@ main {
   .herobanner img {
     width: 500px;
   }
+
+  .form {
+    width: 300px;
+  }
+
+  .addbtn {
+    height: 35px;
+    width: 200px;
+    margin: 20px auto;
+    font-size: 1rem;
+    padding: 3px 0 3px 0;
+  }
 }
