@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import ProductsForAdmin from "../Components/ProductsForAdmin";
 import { useParams } from "react-router-dom";
@@ -25,8 +25,14 @@ const EditProduct = () => {
     kategoria: "",
   });
   const [tuotteet, setTuotteet] = useState();
+  const [showPopOver, setShowPopOver] = useState(false);
+  const [popOverTitle, setPopOverTitle] = useState("Tuote päivitetty");
+  const [popOverMessage, setPopOverMessage] = useState(
+    "Tekemäsi muutokset tallennettiin onnistuneesti."
+  );
   let { id } = useParams();
   const history = useHistory();
+  const target = useRef(null);
   console.log("product id: " + id);
 
   useEffect(() => {
@@ -64,36 +70,60 @@ const EditProduct = () => {
     e.preventDefault();
     console.log("Let's edit...");
     if (data.nimi !== "") {
-      axios.post(
-        "https://artisaanz.herokuapp.com/product/editnimi/" +
-          id +
-          "/" +
-          data.nimi
-      );
+      axios
+        .post(
+          "https://artisaanz.herokuapp.com/product/editnimi/" +
+            id +
+            "/" +
+            data.nimi
+        )
+        .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe");
+          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+        });
     }
     if (data.kuvaus !== "") {
-      axios.post(
-        "https://artisaanz.herokuapp.com/product/editkuvaus/" +
-          id +
-          "/" +
-          data.kuvaus
-      );
+      axios
+        .post(
+          "https://artisaanz.herokuapp.com/product/editkuvaus/" +
+            id +
+            "/" +
+            data.kuvaus
+        )
+        .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe");
+          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+        });
     }
     if (data.hinta !== "") {
-      axios.post(
-        "https://artisaanz.herokuapp.com/product/edithinta/" +
-          id +
-          "/" +
-          data.hinta
-      );
+      axios
+        .post(
+          "https://artisaanz.herokuapp.com/product/edithinta/" +
+            id +
+            "/" +
+            data.hinta
+        )
+        .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe");
+          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+        });
     }
     if (data.artesaani !== "") {
-      axios.post(
-        "https://artisaanz.herokuapp.com/product/editartesaani/" +
-          id +
-          "/" +
-          data.artesaani
-      );
+      axios
+        .post(
+          "https://artisaanz.herokuapp.com/product/editartesaani/" +
+            id +
+            "/" +
+            data.artesaani
+        )
+        .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe");
+          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+        });
     }
     if (data.kategoria !== "") {
       axios.post(
@@ -115,10 +145,8 @@ const EditProduct = () => {
 
   const popover = (
     <Popover id="popover-basic">
-      <Popover.Title as="h3">Tuote päivitetty</Popover.Title>
-      <Popover.Content>
-        Tekemäsi muutokset tallennettiin onnistuneesti.
-      </Popover.Content>
+      <Popover.Title as="h3">{popOverTitle}</Popover.Title>
+      <Popover.Content>{popOverMessage}</Popover.Content>
     </Popover>
   );
 
@@ -196,11 +224,17 @@ const EditProduct = () => {
               onChange={changeData}
             />
           </Form.Group>
-          <OverlayTrigger trigger="click" placement="left" overlay={popover}>
-            <button type="submit" className="addbtn" value="Send data">
-              Päivitä tuote
-            </button>
-          </OverlayTrigger>
+          <button
+            type="submit"
+            className="addbtn"
+            value="Send data"
+            ref={target}
+          >
+            Päivitä tuote
+          </button>
+          <Overlay target={target.current} placement="left" show={showPopOver}>
+            {popover}
+          </Overlay>
           <button className="backbtn" onClick={() => history.goBack()}>
             Takaisin
           </button>

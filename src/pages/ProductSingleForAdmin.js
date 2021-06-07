@@ -1,10 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import "../Components/ProductSingle.css";
 import Button from "react-bootstrap/Button";
@@ -15,8 +15,12 @@ const ProductSingleForAdmin = () => {
   const [tuotteet, setTuotteet] = useState();
   const [showPopup, setShowPopup] = useState(false);
   const [popupImg, setPopupImg] = useState();
+  const [showPopOver, setShowPopOver] = useState(false);
   let { id } = useParams();
   const history = useHistory();
+  const target = useRef(null);
+  const [popOverTitle, setPopOverTitle] = useState("Tuote poistettu");
+  const [popOverMessage, setPopOverMessage] = useState("Tämä tuote poistettiin onnistuneesti.");
 
   useEffect(() => {
     if (!tuotteet) {
@@ -36,7 +40,12 @@ const ProductSingleForAdmin = () => {
     );
   };
   const removeProduct = () => {
-    axios.delete("https://artisaanz.herokuapp.com/product/remove/" + id);
+    axios.delete("https://artisaanz.herokuapp.com/product/remove/" + id)
+    .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe")
+          setPopOverMessage("Tuotetta ei voitu poistaa.")
+        });
     console.log("product removed from database");
   };
 
@@ -50,10 +59,8 @@ const ProductSingleForAdmin = () => {
 
   const popover = (
     <Popover id="popover-basic">
-      <Popover.Title as="h3">Tuote poistettu</Popover.Title>
-      <Popover.Content>
-        Tämä tuote poistettiin onnistuneesti.
-      </Popover.Content>
+      <Popover.Title as="h3">{popOverTitle}</Popover.Title>
+      <Popover.Content>{popOverMessage}</Popover.Content>
     </Popover>
   );
 
@@ -107,11 +114,10 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn">
           <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
-        <OverlayTrigger trigger="click" placement="left" overlay={popover}>
-        <button className="backbtn" onClick={removeProduct}>
+        <button className="backbtn" ref={target} onClick={removeProduct}>
           Poista tämä tuote
         </button>
-        </OverlayTrigger>
+          <Overlay target={target.current} placement="bottom" show={showPopOver}>{popover}</Overlay>
       </div>
     );
   }
