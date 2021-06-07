@@ -5,22 +5,30 @@ import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 
 const Navigation = () => {
-  // const [loading, setLoading] = useState(false);
-  // const [user, setUser] = useState({
-  //   nimi: "",
-  //   esittely: "",
-  //   id: "",
-  // });
+  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState([]);
 
-  // useEffect(() => {
-  //   axios
-  //     .get("https://artisaanz.herokuapp.com/seller/all")
-  //     .then((resp) => setUser(resp.data))
-  //     .then(console.log(user));
-  // }, []);
-  // let userList = user.map((user) => {
-  //   <Dropdown.Item>{user.nimi}</Dropdown.Item>;
-  // });
+  useEffect(() => {
+    axios
+      .get("https://artisaanz.herokuapp.com/seller/all")
+      .then((resp) => setUser(resp.data))
+      .then(console.log(user));
+  }, []);
+
+  const userList = user.map((user) => {
+    return (
+      <Dropdown.Item>
+        <Link
+          to={{
+            pathname: "/myyjälle",
+            state: { seller: user.nimi },
+          }}
+        >
+          {user.nimi}
+        </Link>
+      </Dropdown.Item>
+    );
+  });
 
   return (
     <nav>
@@ -43,38 +51,7 @@ const Navigation = () => {
         <li>
           <Dropdown>
             <DropdownButton alignRight title="Valitse myyjä">
-              <Dropdown.Item>
-                <Link
-                  to={{
-                    pathname: "/myyjälle",
-                    state: { seller: "Riitta Järventie" },
-                  }}
-                >
-                  Riitta Järventie
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to={{
-                    pathname: "/myyjälle",
-                    state: { seller: "Akseli Miettinen" },
-                  }}
-                >
-                  Akseli Miettinen
-                </Link>
-              </Dropdown.Item>
-              <Dropdown.Item>
-                <Link
-                  to={{
-                    pathname: "/myyjälle",
-                    state: { seller: "Salla Vuorikko" },
-                  }}
-                >
-                  Salla Vuorikko
-                </Link>
-              </Dropdown.Item>
-              {/* <Dropdown.Item>{user[0].nimi}</Dropdown.Item>
-              <Dropdown.Item>{userList}</Dropdown.Item> */}
+              {userList}
             </DropdownButton>
           </Dropdown>
         </li>
