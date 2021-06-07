@@ -126,6 +126,10 @@ main {
     max-width: 500px;
     padding-top: 100px;
   }
+
+  .form {
+    width: 500px;
+  }
 }
 
 @media (max-width: 576px) {
