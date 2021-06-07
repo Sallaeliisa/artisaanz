@@ -94,6 +94,11 @@ main {
   font-size: 1.2rem;
 }
 
+.welcometxt {
+  text-align: center;
+  margin-top: 40px;
+}
+
 @media (max-width: 899px) {
   main {
     padding-top: 50px;
