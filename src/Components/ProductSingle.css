@@ -46,3 +46,42 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+
+.popup img {
+  max-width: 60%;
+  height: 600px;
+  margin: 30px 100px;
+}
+
+@media (max-width: 899px) {
+  .singleProduct img {
+    max-width: 500px;
+    max-height: 700px;
+  }
+
+  .singleProduct {
+    padding: 0px;
+    width: 900px;
+  }
+
+  .singleProduct p {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .singleProduct h1 {
+    width: 200px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  #backbtn {
+    margin: 40px;
+  }
+
+  .popup img {
+    max-height: 500px;
+    max-width: 400px;
+  }
+}
