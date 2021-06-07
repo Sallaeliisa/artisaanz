@@ -2,8 +2,26 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
+import axios from "axios";
 
 const Navigation = () => {
+  // const [loading, setLoading] = useState(false);
+  // const [user, setUser] = useState({
+  //   nimi: "",
+  //   esittely: "",
+  //   id: "",
+  // });
+
+  // useEffect(() => {
+  //   axios
+  //     .get("https://artisaanz.herokuapp.com/seller/all")
+  //     .then((resp) => setUser(resp.data))
+  //     .then(console.log(user));
+  // }, []);
+  // let userList = user.map((user) => {
+  //   <Dropdown.Item>{user.nimi}</Dropdown.Item>;
+  // });
+
   return (
     <nav>
       <ul>
@@ -17,7 +35,10 @@ const Navigation = () => {
           <Link to="/artesaanit"> Artesaanit </Link>
         </li>
         <li>
-          <Link to="/meistä"> Meistä </Link>
+          <Link to="/meistä"> Meistä</Link>
+        </li>
+        <li>
+          <Link to="/meistä"> Uusi myyjä</Link>
         </li>
         <li>
           <Dropdown>
@@ -52,6 +73,8 @@ const Navigation = () => {
                   Salla Vuorikko
                 </Link>
               </Dropdown.Item>
+              {/* <Dropdown.Item>{user[0].nimi}</Dropdown.Item>
+              <Dropdown.Item>{userList}</Dropdown.Item> */}
             </DropdownButton>
           </Dropdown>
         </li>
