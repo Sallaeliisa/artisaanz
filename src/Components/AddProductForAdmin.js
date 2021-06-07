@@ -68,6 +68,7 @@ const AddProductForAdmin = () => {
       <div>
         <Form onSubmit={submitData} className="form">
           <Form.Group>
+            <h2>Lisää uusi tuote</h2>
             <Form.Label htmlFor="">Tuote:</Form.Label>
             <Form.Control
               type="text"

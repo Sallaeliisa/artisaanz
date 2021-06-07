@@ -50,7 +50,7 @@ const AddProduct = () => {
       <main>
         <Form onSubmit={submitData} className="form">
           <Form.Group>
-            <Form.Label htmlFor="">Tuote:</Form.Label>
+            <Form.Label htmlFor="">Lisää uusi tuote:</Form.Label>
             <Form.Control
               type="text"
               width="10px"
