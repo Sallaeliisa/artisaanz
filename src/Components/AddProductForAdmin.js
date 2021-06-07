@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import ProductsForAdmin from "./ProductsForAdmin";
 import { useHistory } from "react-router-dom";
@@ -15,13 +15,16 @@ import Products from "../pages/Products";
 const AddProductForAdmin = () => {
   const [seller, setSeller] = useState();
   const history = useHistory();
+  const [showPopOver, setShowPopOver] = useState(false);
+  const [popOverTitle, setPopOverTitle] = useState("Tuote lisätty");
+  const [popOverMessage, setPopOverMessage] = useState("Tuote tallennettiin onnistuneesti.");
+  const target = useRef(null);
 
   useEffect(() => {
     if (history.location.state) {
       setSeller(history.location.state.seller);
     }
   });
-  console.log("Current user: " + seller);
 
   const [data, setData] = useState({
     kuva: [],
@@ -52,14 +55,19 @@ const AddProductForAdmin = () => {
   const submitData = (e) => {
     e.preventDefault();
     data.artesaani = seller;
-    axios.post("https://artisaanz.herokuapp.com/product/add", data);
-    e.target.reset();
+    axios.post("https://artisaanz.herokuapp.com/product/add", data)
+    .then(setShowPopOver(true))
+        .catch((error) => {
+          setPopOverTitle("Virhe")
+          setPopOverMessage("Tuotetta ei voitu lisätä.")
+        });
+        e.target.reset()
   };
 
   const popover = (
     <Popover id="popover-basic">
-      <Popover.Title as="h3">Tuote lisätty</Popover.Title>
-      <Popover.Content>Uusi tuote lisättiin onnistuneesti.</Popover.Content>
+      <Popover.Title as="h3">{popOverTitle}</Popover.Title>
+      <Popover.Content>{popOverMessage}</Popover.Content>
     </Popover>
   );
 
@@ -133,11 +141,10 @@ const AddProductForAdmin = () => {
               onChange={changeData}
             />
           </Form.Group>
-          <OverlayTrigger trigger="click" placement="left" overlay={popover}>
-            <Button type="submit" className="addbtn" value="Send data">
+            <Button type="submit" className="addbtn" value="Send data" ref={target}>
               Lisää tuote
             </Button>
-          </OverlayTrigger>
+            <Overlay target={target.current} placement="left" show={showPopOver}>{popover}</Overlay>
         </Form>
       </div>
     </>
