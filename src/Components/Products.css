@@ -51,7 +51,7 @@
   .productCard {
     max-height: 450px;
     width: 400px;
-    margin-left: 90px;
+    margin-left: 170px;
     padding: 1rem;
     font-size: 1.2rem;
   }
@@ -60,17 +60,27 @@
 @media (max-width: 576px) {
   .filteredProducts {
     display: grid;
-    grid-template-columns: repeat(1, 300px);
+    grid-template-columns: repeat(1, 250px);
   }
   .productCard img {
     max-height: 200px;
     padding-bottom: 10px;
   }
   .productCard {
-    max-height: 350px;
-    width: 300px;
-    margin-left: 40px;
+    max-height: 400px;
+    width: 250px;
+    margin: 20px 35px;
     padding: 1rem;
     font-size: 1rem;
+  }
+
+  .popup img {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+
+  .mainImage img {
+    display: block;
   }
 }

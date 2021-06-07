@@ -117,7 +117,7 @@ main {
   main {
     min-height: calc(100vh - 190px);
     padding-top: 20px;
-    max-width: 650px;
+    max-width: 900px;
   }
 
   .welcometxt {
@@ -125,6 +125,10 @@ main {
     margin: 0 auto;
     max-width: 500px;
     padding-top: 100px;
+  }
+
+  .form {
+    width: 500px;
   }
 }
 
@@ -135,5 +139,17 @@ main {
 
   .herobanner img {
     width: 500px;
+  }
+
+  .form {
+    width: 300px;
+  }
+
+  .addbtn {
+    height: 35px;
+    width: 200px;
+    margin: 20px auto;
+    font-size: 1rem;
+    padding: 3px 0 3px 0;
   }
 }
