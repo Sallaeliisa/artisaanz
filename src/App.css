@@ -72,6 +72,8 @@ main {
   box-shadow: 2px 2px 5px #583a22;
   border-radius: 10px;
   color: #0d0d0d;
+  width: 250px;
+  margin: 25px;
 }
 
 .makersCard a {
