@@ -5,7 +5,6 @@ import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 
 const Navigation = () => {
-  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState([]);
 
   useEffect(() => {
@@ -20,8 +19,8 @@ const Navigation = () => {
       <Dropdown.Item>
         <Link
           to={{
-            pathname: "/myyjälle",
-            state: { seller: user.nimi },
+            pathname: "/login",
+            state: { seller: user.id },
           }}
         >
           {user.nimi}
