@@ -48,15 +48,14 @@
 }
 
 .popup img {
-  max-width: 60%;
-  height: 600px;
+  max-width: 80%;
   margin: 30px 100px;
 }
 
 @media (max-width: 899px) {
   .singleProduct img {
-    max-width: 500px;
-    max-height: 700px;
+    max-width: 1000px;
+    max-height: 900px;
   }
 
   .singleProduct {

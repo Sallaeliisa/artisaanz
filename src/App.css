@@ -72,7 +72,7 @@ main {
   box-shadow: 2px 2px 5px #583a22;
   border-radius: 10px;
   color: #0d0d0d;
-  width: 250px;
+  width: 500px;
   margin: 25px;
 }
 
@@ -126,6 +126,10 @@ main {
     margin-left: 10rem;
   }
 
+  .makersCard {
+    margin-left: 0 auto;
+  }
+
   .herobanner img {
     width: 900px;
     margin: 0 auto;
@@ -158,7 +162,12 @@ main {
   }
 
   .herobanner img {
-    width: 500px;
+    max-width: 500px;
+  }
+
+  .herobanner {
+    margin-top: 50px;
+    height: 100px;
   }
 
   .form {
@@ -175,5 +184,6 @@ main {
 
   .makers {
     margin-left: 5px;
+    width: 25rem;
   }
 }
