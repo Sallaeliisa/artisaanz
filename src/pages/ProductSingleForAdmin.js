@@ -19,8 +19,8 @@ const ProductSingleForAdmin = () => {
   let { id } = useParams();
   const history = useHistory();
   const target = useRef(null);
-  const [popOverTitle, setPopOverTitle] = useState("Tuote poistettu");
-  const [popOverMessage, setPopOverMessage] = useState("Tämä tuote poistettiin onnistuneesti.");
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
 
   useEffect(() => {
     if (!tuotteet) {
@@ -40,12 +40,15 @@ const ProductSingleForAdmin = () => {
     );
   };
   const removeProduct = () => {
-    axios.delete("https://artisaanz.herokuapp.com/product/remove/" + id)
-    .then(setShowPopOver(true))
-        .catch((error) => {
-          setPopOverTitle("Virhe")
-          setPopOverMessage("Tuotetta ei voitu poistaa.")
-        });
+    axios
+      .delete("https://artisaanz.herokuapp.com/product/remove/" + id)
+      .then(setPopOverTitle("Tuote poistettu"))
+      .then(setPopOverMessage("Tämä tuote poistettiin onnistuneesti."))
+      .catch((error) => {
+        setPopOverTitle("Virhe");
+        setPopOverMessage("Tuotetta ei voitu poistaa.");
+      });
+    setShowPopOver(true);
     console.log("product removed from database");
   };
 
@@ -117,7 +120,9 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn" ref={target} onClick={removeProduct}>
           Poista tämä tuote
         </button>
-          <Overlay target={target.current} placement="bottom" show={showPopOver}>{popover}</Overlay>
+        <Overlay target={target.current} placement="bottom" show={showPopOver}>
+          {popover}
+        </Overlay>
       </div>
     );
   }

@@ -45,15 +45,6 @@ const Login = () => {
       loggedIn = true;
       console.log(loggedIn);
       action = <Redirect push to="/myyjälle" />;
-
-      // <Link
-      //   to={{
-      //     pathname: "/myyjälle",
-      //     //state: { seller: user.id },
-      //   }}
-      // >
-      //   Näin!
-      // </Link>
     } else {
       console.log("incorrect username or password");
       console.log(

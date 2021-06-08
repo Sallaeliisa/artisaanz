@@ -14,10 +14,11 @@ const AddProductForAdmin = () => {
   const [seller, setSeller] = useState();
   const history = useHistory();
   const [showPopOver, setShowPopOver] = useState(false);
-  const [popOverTitle, setPopOverTitle] = useState("Tuote lisätty");
-  const [popOverMessage, setPopOverMessage] = useState(
-    "Tuote tallennettiin onnistuneesti."
-  );
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
+  const successMessage = "Tuote tallennettiin onnistuneesti.";
+  const errorMessage =
+    "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
 
   useEffect(() => {
@@ -57,13 +58,13 @@ const AddProductForAdmin = () => {
     data.artesaani = seller;
     axios
       .post("https://artisaanz.herokuapp.com/product/add", data)
-      .then(setShowPopOver(true))
+      .then(setPopOverTitle("Tuote lisätty"))
+      .then(setPopOverMessage(successMessage))
       .catch((error) => {
         setPopOverTitle("Virhe");
-        setPopOverMessage(
-          "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä."
-        );
+        setPopOverMessage(errorMessage);
       });
+    setShowPopOver(true);
     e.target.reset();
   };
 

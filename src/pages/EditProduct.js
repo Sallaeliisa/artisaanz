@@ -21,10 +21,9 @@ const EditProduct = () => {
   });
   const [tuotteet, setTuotteet] = useState();
   const [showPopOver, setShowPopOver] = useState(false);
-  const [popOverTitle, setPopOverTitle] = useState("Tuote päivitetty");
-  const [popOverMessage, setPopOverMessage] = useState(
-    "Tekemäsi muutokset tallennettiin onnistuneesti."
-  );
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
+  const successMessage = "Tekemäsi muutokset tallennettiin onnistuneesti.";
   const errorMessage =
     "Muutoksia ei voitu tallentaa. Tarkista, että et käyttänyt erikoismerkkejä.";
   let { id } = useParams();
@@ -74,11 +73,13 @@ const EditProduct = () => {
             "/" +
             data.nimi
         )
-        .then(setShowPopOver(true))
+        .then(setPopOverTitle("Tuote päivitetty"))
+        .then(setPopOverMessage(successMessage))
         .catch((error) => {
           setPopOverTitle("Virhe");
           setPopOverMessage(errorMessage);
         });
+      setShowPopOver(true);
     }
     if (data.kuvaus !== "") {
       axios
@@ -88,11 +89,13 @@ const EditProduct = () => {
             "/" +
             data.kuvaus
         )
-        .then(setShowPopOver(true))
+        .then(setPopOverTitle("Tuote päivitetty"))
+        .then(setPopOverMessage(successMessage))
         .catch((error) => {
           setPopOverTitle("Virhe");
           setPopOverMessage(errorMessage);
         });
+      setShowPopOver(true);
     }
     if (data.hinta !== "") {
       axios
@@ -102,11 +105,13 @@ const EditProduct = () => {
             "/" +
             data.hinta
         )
-        .then(setShowPopOver(true))
+        .then(setPopOverTitle("Tuote päivitetty"))
+        .then(setPopOverMessage(successMessage))
         .catch((error) => {
           setPopOverTitle("Virhe");
           setPopOverMessage(errorMessage);
         });
+      setShowPopOver(true);
     }
     if (data.artesaani !== "") {
       axios
@@ -116,11 +121,13 @@ const EditProduct = () => {
             "/" +
             data.artesaani
         )
-        .then(setShowPopOver(true))
+        .then(setPopOverTitle("Tuote päivitetty"))
+        .then(setPopOverMessage(successMessage))
         .catch((error) => {
           setPopOverTitle("Virhe");
           setPopOverMessage(errorMessage);
         });
+      setShowPopOver(true);
     }
     if (data.kategoria !== "") {
       axios.post(
