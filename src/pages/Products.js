@@ -24,7 +24,7 @@ const Products = () => {
     }
   });
 
-  const productFilter = tuote.filter((tuote) => {
+  const productFilter = tuote.reverse().filter((tuote) => {
     if (seller) {
       return (
         tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
