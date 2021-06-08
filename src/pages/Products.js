@@ -52,6 +52,11 @@ const Products = () => {
     console.log(searchInput);
   };
 
+  const removeSeller = () => {
+    history.location.state = "";
+    setSeller(false);
+  }
+
   const filteredProducts = productFilter.map((tuote) => {
     return (
       <div key={tuote.id}>
@@ -82,9 +87,14 @@ const Products = () => {
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {seller && (
-            <button className="backbtn" onClick={() => history.goBack()}>
-              Takaisin
-            </button>
+            <div>
+              <button className="backbtn" onClick={() => history.goBack()}>
+                Takaisin
+              </button>
+              <button className="backbtn" onClick={() => removeSeller()}>
+                Kaikkien artesaanien tuotteet
+              </button>
+            </div>
           )}
           {loading === false && (
             <Spinner
