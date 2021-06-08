@@ -46,7 +46,7 @@ const ProductsForAdmin = () => {
     console.log(searchInput);
   };
 
-  const filteredProducts = productFilter.map((tuote) => {
+  const filteredProducts = productFilter.reverse().map((tuote) => {
     return (
       <div key={tuote.id}>
         <ProductCardForAdmin

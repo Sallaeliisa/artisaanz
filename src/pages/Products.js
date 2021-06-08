@@ -24,7 +24,7 @@ const Products = () => {
     }
   });
 
-  const productFilter = tuote.filter((tuote) => {
+  const productFilter = tuote.reverse().filter((tuote) => {
     if (seller) {
       return (
         tuote.artesaani.toLowerCase().includes(seller.toLowerCase()) &&
@@ -51,6 +51,11 @@ const Products = () => {
     setSearchInput(e.target.value);
     console.log(searchInput);
   };
+
+  const removeSeller = () => {
+    history.location.state = "";
+    setSeller(false);
+  }
 
   const filteredProducts = productFilter.map((tuote) => {
     return (
@@ -82,9 +87,14 @@ const Products = () => {
           <SearchBox search={searchValueHandler} />
           <div className="filteredProducts">{filteredProducts}</div>
           {seller && (
-            <button className="backbtn" onClick={() => history.goBack()}>
-              Takaisin
-            </button>
+            <div>
+              <button className="backbtn" onClick={() => history.goBack()}>
+                Takaisin
+              </button>
+              <button className="backbtn" onClick={() => removeSeller()}>
+                Kaikkien artesaanien tuotteet
+              </button>
+            </div>
           )}
           {loading === false && (
             <Spinner
