@@ -51,18 +51,34 @@ const About = () => {
           id="form"
         >
           <Form.Group>
-            <Form.Label htmlFor="">Your name:</Form.Label>
-            <Form.Control type="text" width="10px" name="nimi" required />
-          </Form.Group>
-
-          <Form.Group>
             <Form.Label htmlFor="">Your email:</Form.Label>
-            <Form.Control type="email" width="10px" name="email" required />
+            <Form.Control
+              type="email"
+              width="10px"
+              name="email"
+              id="email"
+              required
+            />
+          </Form.Group>
+          <Form.Group>
+            <Form.Label htmlFor="">Receiver:</Form.Label>
+            <Form.Control
+              type="email"
+              width="10px"
+              name="email"
+              id="receiver"
+            />
           </Form.Group>
 
           <Form.Group>
             <Form.Label htmlFor="">Subject:</Form.Label>
-            <Form.Control width="10px" type="text" name="subject" required />
+            <Form.Control
+              width="10px"
+              type="text"
+              id="subject"
+              name="subject"
+              required
+            />
           </Form.Group>
 
           <Form.Group>
@@ -71,7 +87,8 @@ const About = () => {
               as="textarea"
               rows={6}
               type="text"
-              name="kuvaus"
+              name="message"
+              id="message"
               required
             />
             <Button type="submit" className="addbtn" value="Send data">

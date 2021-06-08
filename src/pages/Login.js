@@ -5,14 +5,30 @@ import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 import { Link, useHistory } from "react-router-dom";
 import { withRouter, Redirect, Switch, Route } from "react-router";
-import "../App.css";
+import "../Components/ProductSingle.css";
 
 const Login = () => {
-  let loggedIn = false;
-  let action = undefined;
   const [seller, setSeller] = useState();
+  const [logged, setLogged] = useState();
   const history = useHistory();
   const [user, setUser] = useState();
+
+  const loginTry = (e) => {
+    e.preventDefault();
+
+    if (data.username === user.username && data.password === user.password) {
+      <Redirect push to="/myyjälle" />;
+      setLogged(true);
+    } else {
+      console.log("incorrect username or password");
+      console.log(
+        "username should be: " +
+          user.username +
+          " and password:" +
+          user.password
+      );
+    }
+  };
 
   useEffect(() => {
     if (history.location.state) {
@@ -34,29 +50,6 @@ const Login = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const loginTry = (e) => {
-    e.preventDefault();
-
-    console.log("Trying to log in...");
-
-    console.log(data.username);
-    if (data.username === user.username && data.password === user.password) {
-      console.log("That's a match!");
-      loggedIn = true;
-      console.log(loggedIn);
-      action = <Redirect push to="/myyjälle" />;
-    } else {
-      console.log("incorrect username or password");
-      console.log(
-        "username should be: " +
-          user.username +
-          " and password:" +
-          user.password
-      );
-      console.log("id: " + seller);
-    }
-  };
-
   return (
     <>
       <Form onSubmit={loginTry}>
@@ -74,7 +67,7 @@ const Login = () => {
         <Form.Group>
           <Form.Label htmlFor="">Password:</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             width="10px"
             name="password"
             maxlength="30"
@@ -82,27 +75,18 @@ const Login = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <button type="submit" value="Send data">
+        <button type="submit" value="Send data" id="backbtn">
           Kirjaudu sisään/login
         </button>
       </Form>
-
-      <div>{loggedIn ? <Redirect push to="/myyjälle" /> : null}</div>
-      <div>{loginTry}</div>
-      <div>{loggedIn ? <p>testi</p> : <p>loggedIn muka false</p>}</div>
-      {user ? (
-        <Link
+      {logged && (
+        <Redirect
           to={{
             pathname: "/myyjälle",
             state: { seller: user.nimi },
           }}
-        >
-          Tästäpä myyjän sivuille
-        </Link>
-      ) : (
-        <p>lattaapi vielä</p>
+        />
       )}
-      <div>{action}</div>
     </>
   );
 };
