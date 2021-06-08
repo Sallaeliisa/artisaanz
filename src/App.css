@@ -100,7 +100,7 @@ main {
 
 .welcometxt {
   text-align: center;
-  margin-top: 40px;
+  margin: 40px 30px 0 30px;
 }
 /*******login page****/
 .hidden {
@@ -121,6 +121,7 @@ main {
     grid-template-columns: repeat(1, 30rem);
     grid-auto-rows: auto;
     grid-gap: 3rem;
+    margin-left: 10rem;
   }
 
   .herobanner img {
@@ -168,5 +169,9 @@ main {
     margin: 20px auto;
     font-size: 1rem;
     padding: 3px 0 3px 0;
+  }
+
+  .makers {
+    margin-left: 5px;
   }
 }
