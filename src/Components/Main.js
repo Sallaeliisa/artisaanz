@@ -4,10 +4,11 @@ import Landing from "../pages/Landing";
 import Products from "../pages/Products";
 import Makers from "../pages/Makers";
 import About from "../pages/About";
-import AddProduct from "../pages/AddProduct";
+//import AddProduct from "../pages/AddProduct";
 import Admin from "../pages/Admin";
 import ProductsForAdmin from "./ProductsForAdmin";
 import EditProduct from "../pages/EditProduct";
+import Login from "../pages/Login";
 import AddSeller from "../pages/AddSeller";
 
 const Main = () => {
@@ -23,6 +24,7 @@ const Main = () => {
         <Route path="/uusiMyyjä" component={AddSeller} />
         <Route path="/myyjälle" component={Admin} />
         <Route path="/muokkaa/:id" component={EditProduct} />
+        <Route path="/login" component={Login} />
       </Switch>
     </main>
   );

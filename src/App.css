@@ -102,7 +102,15 @@ main {
   text-align: center;
   margin-top: 40px;
 }
+/*******login page****/
+.hidden {
+  visibility: hidden;
+}
+.reveal {
+  visibility: visible;
+}
 
+/******************/
 @media (max-width: 899px) {
   main {
     padding-top: 50px;

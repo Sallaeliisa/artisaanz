@@ -6,11 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
-import ProductsForAdmin from "./ProductsForAdmin";
 import { useHistory } from "react-router-dom";
 
 import "../App.css";
-import Products from "../pages/Products";
 
 const AddProductForAdmin = () => {
   const [seller, setSeller] = useState();

@@ -1,19 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
-import ProductsForAdmin from "../Components/ProductsForAdmin";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
 import "../App.css";
-import Products from "./Products";
 
 const EditProduct = () => {
   const [data, setData] = useState({
@@ -170,7 +165,7 @@ const EditProduct = () => {
               type="text"
               width="10px"
               name="nimi"
-              maxlength="20"
+              maxLength="20"
               placeholder={tuotteet.nimi}
               onChange={changeData}
             />
@@ -192,7 +187,7 @@ const EditProduct = () => {
             <Form.Label htmlFor="">Tuotteen kuvaus:</Form.Label>
             <Form.Control
               as="textarea"
-              maxlength="255"
+              maxLength="255"
               rows={3}
               type="text"
               name="kuvaus"

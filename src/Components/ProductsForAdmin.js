@@ -6,8 +6,6 @@ import { Switch, Route } from "react-router-dom";
 import axios from "axios";
 import "../Components/Products.css";
 import Spinner from "react-bootstrap/Spinner";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/esm/Row";
 import { useHistory } from "react-router-dom";
 
 const ProductsForAdmin = () => {

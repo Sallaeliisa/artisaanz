@@ -5,14 +5,12 @@ import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
 
 const Navigation = () => {
-  const [loading, setLoading] = useState(false);
   const [user, setUser] = useState([]);
 
   useEffect(() => {
     axios
       .get("https://artisaanz.herokuapp.com/seller/all")
-      .then((resp) => setUser(resp.data))
-      .then(console.log(user));
+      .then((resp) => setUser(resp.data));
   }, []);
 
   const userList = user.map((user) => {
@@ -20,8 +18,8 @@ const Navigation = () => {
       <Dropdown.Item>
         <Link
           to={{
-            pathname: "/myyjälle",
-            state: { seller: user.nimi },
+            pathname: "/login",
+            state: { seller: user.id },
           }}
         >
           {user.nimi}

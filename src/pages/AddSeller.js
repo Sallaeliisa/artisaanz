@@ -9,8 +9,8 @@ const AddSeller = () => {
   const [data, setData] = useState({
     nimi: "",
     esittely: "",
-    tuotteet: [],
-    tuotteita: "",
+    // tuotteet: [],
+    // tuotteita: "",
     username: "",
     password: "",
   });
@@ -60,6 +60,21 @@ const AddSeller = () => {
             required
             onChange={changeData}
           />
+          {/* <Form.Label>tuotteet:</Form.Label>
+          <Form.Control
+            type="text"
+            width="10px"
+            name="tuotteet"
+            onChange={changeData}
+          />
+          <Form.Label>tuotteita:</Form.Label>
+          <Form.Control
+            type="number"
+            width="10px"
+            name="tuotteita"
+            required
+            onChange={changeData}
+          /> */}
           <Form.Label>Käyttäjätunnus:</Form.Label>
           <Form.Control
             type="text"
@@ -76,14 +91,14 @@ const AddSeller = () => {
             required
             onChange={changeData}
           />
-          <Form.Label>Salasana uudelleen:</Form.Label>
+          {/* <Form.Label>Salasana uudelleen:</Form.Label>
           <Form.Control
             type="text"
             width="10px"
             name="passwordCheck"
             required
-            // onChange={changeData}
-          />
+            onChange={changeData}
+          /> */}
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="">Esittelyteksti:</Form.Label>
@@ -96,9 +111,9 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <Button type="submit" className="addbtn" value="Send data" ref={target}>
+        <button type="submit" value="Send data">
           Lähetä
-        </Button>
+        </button>
         <Overlay target={target.current} placement="left" show={showPopOver}>
           {popover}
         </Overlay>
