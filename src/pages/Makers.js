@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Makers = () => {
   return (
     <main className="makers">
-      <Card className="makersCard" style={{ width: "30rem" }}>
+      <Card className="makersCard">
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -30,7 +30,7 @@ const Makers = () => {
         </Card.Body>
       </Card>
 
-      <Card className="makersCard" style={{ width: "30rem" }}>
+      <Card className="makersCard">
         <Card.Body>
           <Card.Title>Akseli Miettinen</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -52,7 +52,7 @@ const Makers = () => {
         </Card.Body>
       </Card>
 
-      <Card className="makersCard" style={{ width: "30rem" }}>
+      <Card className="makersCard">
         <Card.Body>
           <Card.Title>Salla Vuorikko</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">

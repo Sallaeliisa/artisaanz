@@ -37,6 +37,7 @@ header a:hover {
     width: 200px;
   }
   header a {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
   }
 }
