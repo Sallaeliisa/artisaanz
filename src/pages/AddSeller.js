@@ -111,9 +111,14 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <button type="submit" value="Send data">
-          Lähetä
-        </button>
+        <Button
+            type="submit"
+            className="addbtn"
+            value="Send data"
+            ref={target}
+          >
+            Lähetä
+          </Button>
         <Overlay target={target.current} placement="left" show={showPopOver}>
           {popover}
         </Overlay>
