@@ -14,6 +14,10 @@ html {
   text-align: center;
 }
 
+.bold {
+  font-size: x-large;
+}
+
 input {
   padding: 10px;
   border-radius: 5px;
@@ -98,7 +102,15 @@ main {
   text-align: center;
   margin-top: 40px;
 }
+/*******login page****/
+.hidden {
+  visibility: hidden;
+}
+.reveal {
+  visibility: visible;
+}
 
+/******************/
 @media (max-width: 899px) {
   main {
     padding-top: 50px;

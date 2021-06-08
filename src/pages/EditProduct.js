@@ -25,6 +25,8 @@ const EditProduct = () => {
   const [popOverMessage, setPopOverMessage] = useState(
     "Tekemäsi muutokset tallennettiin onnistuneesti."
   );
+  const errorMessage =
+    "Muutoksia ei voitu tallentaa. Tarkista, että et käyttänyt erikoismerkkejä.";
   let { id } = useParams();
   const history = useHistory();
   const target = useRef(null);
@@ -75,7 +77,7 @@ const EditProduct = () => {
         .then(setShowPopOver(true))
         .catch((error) => {
           setPopOverTitle("Virhe");
-          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+          setPopOverMessage(errorMessage);
         });
     }
     if (data.kuvaus !== "") {
@@ -89,7 +91,7 @@ const EditProduct = () => {
         .then(setShowPopOver(true))
         .catch((error) => {
           setPopOverTitle("Virhe");
-          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+          setPopOverMessage(errorMessage);
         });
     }
     if (data.hinta !== "") {
@@ -103,7 +105,7 @@ const EditProduct = () => {
         .then(setShowPopOver(true))
         .catch((error) => {
           setPopOverTitle("Virhe");
-          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+          setPopOverMessage(errorMessage);
         });
     }
     if (data.artesaani !== "") {
@@ -117,7 +119,7 @@ const EditProduct = () => {
         .then(setShowPopOver(true))
         .catch((error) => {
           setPopOverTitle("Virhe");
-          setPopOverMessage("Muutoksia ei voitu tallentaa.");
+          setPopOverMessage(errorMessage);
         });
     }
     if (data.kategoria !== "") {
@@ -156,7 +158,7 @@ const EditProduct = () => {
               type="text"
               width="10px"
               name="nimi"
-              maxlength="20"
+              maxLength="20"
               placeholder={tuotteet.nimi}
               onChange={changeData}
             />
@@ -178,7 +180,7 @@ const EditProduct = () => {
             <Form.Label htmlFor="">Tuotteen kuvaus:</Form.Label>
             <Form.Control
               as="textarea"
-              maxlength="255"
+              maxLength="255"
               rows={3}
               type="text"
               name="kuvaus"

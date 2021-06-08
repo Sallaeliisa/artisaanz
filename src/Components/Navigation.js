@@ -10,8 +10,7 @@ const Navigation = () => {
   useEffect(() => {
     axios
       .get("https://artisaanz.herokuapp.com/seller/all")
-      .then((resp) => setUser(resp.data))
-      .then(console.log(user));
+      .then((resp) => setUser(resp.data));
   }, []);
 
   const userList = user.map((user) => {
@@ -45,7 +44,7 @@ const Navigation = () => {
           <Link to="/meistä"> Meistä</Link>
         </li>
         <li>
-          <Link to="/meistä"> Uusi myyjä</Link>
+          <Link to="/uusiMyyjä"> Uusi myyjä</Link>
         </li>
         <li>
           <Dropdown>
