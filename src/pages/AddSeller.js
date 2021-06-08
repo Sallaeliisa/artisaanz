@@ -29,11 +29,12 @@ const AddSeller = () => {
     console.log(data);
     axios
       .post("https://artisaanz.herokuapp.com/seller/add", data)
-      .then(setPopOverTitle("Artisaani lisätty"))
+      .then(setPopOverTitle("Artesaani lisätty"))
       .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
       .catch((error) => {
         setPopOverTitle("Virhe");
         setPopOverMessage("Rekisteröinti ei onnistunut.");
+        console.log(error.response.data);
       });
     setShowPopOver(true);
     e.target.reset();
