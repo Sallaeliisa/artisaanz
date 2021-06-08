@@ -8,6 +8,7 @@ import AddProduct from "../pages/AddProduct";
 import Admin from "../pages/Admin";
 import ProductsForAdmin from "./ProductsForAdmin";
 import EditProduct from "../pages/EditProduct";
+import AddSeller from "../pages/AddSeller";
 
 const Main = () => {
   return (
@@ -19,6 +20,7 @@ const Main = () => {
         <Route path="/munTuotteet" component={ProductsForAdmin} />
         <Route path="/artesaanit" component={Makers} />
         <Route path="/meistä" component={About} />
+        <Route path="/uusiMyyjä" component={AddSeller} />
         <Route path="/myyjälle" component={Admin} />
         <Route path="/muokkaa/:id" component={EditProduct} />
       </Switch>
