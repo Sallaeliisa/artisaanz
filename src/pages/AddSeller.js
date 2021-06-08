@@ -29,11 +29,12 @@ const AddSeller = () => {
     console.log(data);
     axios
       .post("https://artisaanz.herokuapp.com/seller/add", data)
-      .then(setPopOverTitle("Artisaani lisätty"))
+      .then(setPopOverTitle("Artesaani lisätty"))
       .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
       .catch((error) => {
         setPopOverTitle("Virhe");
         setPopOverMessage("Rekisteröinti ei onnistunut.");
+        console.log(error.response.data);
       });
     setShowPopOver(true);
     e.target.reset();
@@ -110,9 +111,14 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <button type="submit" value="Send data">
-          Lähetä
-        </button>
+        <Button
+            type="submit"
+            className="addbtn"
+            value="Send data"
+            ref={target}
+          >
+            Lähetä
+          </Button>
         <Overlay target={target.current} placement="left" show={showPopOver}>
           {popover}
         </Overlay>
