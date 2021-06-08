@@ -6,7 +6,6 @@ import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 
 const AddSeller = () => {
-
   const [data, setData] = useState({
     nimi: "",
     esittely: "",
@@ -17,8 +16,8 @@ const AddSeller = () => {
   });
 
   const [showPopOver, setShowPopOver] = useState(false);
-  const [popOverTitle, setPopOverTitle] = useState("Artisaani lisätty");
-  const [popOverMessage, setPopOverMessage] = useState("Voit nyt lisätä tuotteita myytäväksi.");
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
 
   const changeData = (e) => {
@@ -30,13 +29,13 @@ const AddSeller = () => {
     console.log(data);
     axios
       .post("https://artisaanz.herokuapp.com/seller/add", data)
-      .then(setShowPopOver(true))
+      .then(setPopOverTitle("Artisaani lisätty"))
+      .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
       .catch((error) => {
         setPopOverTitle("Virhe");
-        setPopOverMessage(
-          "Rekisteröinti ei onnistunut."
-        );
+        setPopOverMessage("Rekisteröinti ei onnistunut.");
       });
+    setShowPopOver(true);
     e.target.reset();
   };
 

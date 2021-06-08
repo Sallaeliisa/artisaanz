@@ -16,8 +16,11 @@ const AddProductForAdmin = () => {
   const [seller, setSeller] = useState();
   const history = useHistory();
   const [showPopOver, setShowPopOver] = useState(false);
-  const [popOverTitle, setPopOverTitle] = useState("Tuote lisätty");
-  const [popOverMessage, setPopOverMessage] = useState("Tuote tallennettiin onnistuneesti.");
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
+  const successMessage = "Tuote tallennettiin onnistuneesti.";
+  const errorMessage =
+    "Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.";
   const target = useRef(null);
 
   useEffect(() => {
@@ -55,13 +58,16 @@ const AddProductForAdmin = () => {
   const submitData = (e) => {
     e.preventDefault();
     data.artesaani = seller;
-    axios.post("https://artisaanz.herokuapp.com/product/add", data)
-    .then(setShowPopOver(true))
-        .catch((error) => {
-          setPopOverTitle("Virhe")
-          setPopOverMessage("Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.")
-        });
-        e.target.reset()
+    axios
+      .post("https://artisaanz.herokuapp.com/product/add", data)
+      .then(setPopOverTitle("Tuote lisätty"))
+      .then(setPopOverMessage(successMessage))
+      .catch((error) => {
+        setPopOverTitle("Virhe");
+        setPopOverMessage(errorMessage);
+      });
+    setShowPopOver(true);
+    e.target.reset();
   };
 
   const popover = (
@@ -142,10 +148,17 @@ const AddProductForAdmin = () => {
               onChange={changeData}
             />
           </Form.Group>
-            <Button type="submit" className="addbtn" value="Send data" ref={target}>
-              Lisää tuote
-            </Button>
-            <Overlay target={target.current} placement="left" show={showPopOver}>{popover}</Overlay>
+          <Button
+            type="submit"
+            className="addbtn"
+            value="Send data"
+            ref={target}
+          >
+            Lisää tuote
+          </Button>
+          <Overlay target={target.current} placement="left" show={showPopOver}>
+            {popover}
+          </Overlay>
         </Form>
       </div>
     </>
