@@ -59,7 +59,7 @@ const AddProductForAdmin = () => {
     .then(setShowPopOver(true))
         .catch((error) => {
           setPopOverTitle("Virhe")
-          setPopOverMessage("Tuotetta ei voitu lisätä.")
+          setPopOverMessage("Tuotetta ei voitu lisätä. Tarkista, että et käyttänyt erikoismerkkejä.")
         });
         e.target.reset()
   };
