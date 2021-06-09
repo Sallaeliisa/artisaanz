@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
+import Modal from "react-bootstrap/Modal";
 import "../Components/ProductSingle.css";
 import Button from "react-bootstrap/Button";
 import EditProduct from "./EditProduct";
@@ -16,6 +17,7 @@ const ProductSingleForAdmin = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupImg, setPopupImg] = useState();
   const [showPopOver, setShowPopOver] = useState(false);
+  const [showModal, setShowModal] = useState(false);
   let { id } = useParams();
   const history = useHistory();
   const target = useRef(null);
@@ -39,6 +41,10 @@ const ProductSingleForAdmin = () => {
       </div>
     );
   };
+
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+
   const removeProduct = () => {
     axios
       .delete("https://artisaanz.herokuapp.com/product/remove/" + id)
@@ -117,12 +123,30 @@ const ProductSingleForAdmin = () => {
         <button className="backbtn">
           <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
         </button>
-        <button className="backbtn" ref={target} onClick={removeProduct}>
-          Poista tämä tuote
+        <button className="backbtn" ref={target} onClick={handleShowModal}>
+          Poista tuote
         </button>
         <Overlay target={target.current} placement="bottom" show={showPopOver}>
           {popover}
         </Overlay>
+
+        <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header>
+          <Modal.Title>Vahvista poisto</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Haluatko varmasti poistaa tämän tuotteen?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Takaisin
+          </Button>
+          <Button variant="primary" onClick={() => {
+            removeProduct();
+            handleCloseModal();
+            }}>
+            Poista
+          </Button>
+        </Modal.Footer>
+      </Modal>
       </div>
     );
   }
