@@ -7,6 +7,9 @@ import Popover from "react-bootstrap/Popover";
 import Col from "react-bootstrap/esm/Col";
 import Row from "react-bootstrap/esm/Row";
 
+import "../App.css";
+import "../Components/Products.css";
+
 const AddSeller = () => {
   const [data, setData] = useState({
     nimi: "",
