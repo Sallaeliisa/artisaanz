@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import ProductsForAdmin from "../Components/ProductsForAdmin";
 
 import "../App.css";
-import Products from "./Products";
 
 const AddProduct = () => {
   const [data, setData] = useState({

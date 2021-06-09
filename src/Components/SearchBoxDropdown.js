@@ -23,27 +23,6 @@ const SearchBoxDropdown = ({ search }) => {
           <option>Muu</option>
         </Form.Control>
       </div>
-      {/* 
-      <div className="mr-sm-2">
-        <input
-          className="secondSearchBox"
-          className="form-control"
-          list="datalistOptions"
-          id="exampleDataList"
-          placeholder="Etsi kategorialla..."
-          onChange={search}
-          type="select"
-        />
-
-        <datalist id="datalistOptions">
-          <option value="Pussukat" />
-          <option value="Laukut" />
-          <option value="Leivonnaiset" />
-          <option value="Villasukat" />
-          <option value="Korut" />
-          <option value="Sisustus" />
-        </datalist>
-      </div> */}
     </>
   );
 };
