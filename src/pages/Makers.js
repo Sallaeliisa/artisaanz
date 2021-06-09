@@ -16,20 +16,32 @@ const Makers = () => {
     setLoading(true);
   }, []);
 
+  const makers = maker.map((maker) => {
+    return (
+      <Card className="makersCard" key={maker.id}>
+        <Card.Body>
+          <Card.Title>{maker.nimi}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
+            {maker.tuotteet}
+          </Card.Subtitle>
+          <Card.Text>{maker.esittely}</Card.Text>
+          <Link
+            to={{
+              pathname: "/tuotteet",
+              state: { seller: maker.nimi },
+            }}
+          >
+            Artesaanin tuotteet
+          </Link>
+        </Card.Body>
+      </Card>
+    );
+  });
+
   return (
     <main className="makers">
-      <div key={maker.id}>
-        <ProductCard
-          id={maker.id}
-          key={maker.id}
-          kuva="Ei kuvaa"
-          nimi={maker.nimi}
-          artesaani={maker.esittely}
-          //hinta={tuote.hinta}
-          //kategoria={tuote.kategoria}
-        />
-      </div>
-      <Card className="makersCard">
+      {makers}
+      {/* <Card className="makersCard">
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
@@ -93,7 +105,7 @@ const Makers = () => {
             Artesaanin tuotteet
           </Link>
         </Card.Body>
-      </Card>
+      </Card> */}
     </main>
   );
 };
