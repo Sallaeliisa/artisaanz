@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
-import Overlay from "react-bootstrap/Overlay";
-import Popover from "react-bootstrap/Popover";
-import { Link, useHistory } from "react-router-dom";
-import { withRouter, Redirect, Switch, Route } from "react-router";
+
+import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router";
 import "../Components/ProductSingle.css";
 
 const Login = () => {
@@ -31,7 +30,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (history.location.state) {
+    if ([history.location.state, seller]) {
       setSeller(history.location.state.seller);
       if (seller) {
         axios
@@ -59,7 +58,7 @@ const Login = () => {
             type="text"
             width="10px"
             name="username"
-            maxlength="30"
+            maxLength="30"
             placeholder="example"
             onChange={changeData}
           />
@@ -70,7 +69,7 @@ const Login = () => {
             type="password"
             width="10px"
             name="password"
-            maxlength="30"
+            maxLength="30"
             placeholder="secret"
             onChange={changeData}
           />

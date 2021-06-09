@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import ProductCard from "../Components/ProductCard";
 
 const Makers = () => {
+  const [maker, setMaker] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("https://artisaanz.herokuapp.com/seller/all/")
+      .then(setLoading(true))
+      .then((response) => setMaker(response.data));
+    setLoading(true);
+  }, []);
+
   return (
     <main className="makers">
+      <div key={maker.id}>
+        <ProductCard
+          id={maker.id}
+          key={maker.id}
+          kuva="Ei kuvaa"
+          nimi={maker.nimi}
+          artesaani={maker.esittely}
+          //hinta={tuote.hinta}
+          //kategoria={tuote.kategoria}
+        />
+      </div>
       <Card className="makersCard">
         <Card.Body>
           <Card.Title>Riitta Järventie</Card.Title>
@@ -37,9 +61,9 @@ const Makers = () => {
             Tuotteet: Leivonnaiset
           </Card.Subtitle>
           <Card.Text>
-            Hapanjuureni täytti juuri vuoden. Tästä ikiomasta juuresta leivotut
-            näyttävät ja maukkaat leivät ovat intohimoni. Kehittelen jatkuvasti
-            uusia reseptejä ja makuvivahteita.
+            Lyyti hapanjuureni täytti juuri vuoden. Tästä ikiomasta juuresta
+            leivotut näyttävät ja maukkaat leivät ovat intohimoni. Kehittelen
+            jatkuvasti uusia reseptejä ja makuvivahteita.
           </Card.Text>
           <Link
             to={{
