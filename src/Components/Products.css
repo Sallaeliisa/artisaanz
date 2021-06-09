@@ -37,6 +37,7 @@
   grid-gap: 3rem;
 }
 
+
 #artisanbtn {
   height: 45px;
   width: 300px;
@@ -48,6 +49,20 @@
   margin: 20px;
   font-size: 1.2rem;
 }
+
+.btn-primary:hover {
+  transform: scale(1.1);
+  background-color: #a8611f;
+}
+
+@media (max-width: 899px) {
+  .filteredProducts {
+    display: grid;
+    grid-template-columns: repeat(1, 400px);
+    grid-auto-rows: auto;
+    grid-gap: 3rem;
+  }
+
 
 .btn-primary {
   height: 45px;

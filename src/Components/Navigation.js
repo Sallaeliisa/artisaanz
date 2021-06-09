@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Dropdown from "react-bootstrap/Dropdown";
 import axios from "axios";
+import "../App.css";
 
 const Navigation = () => {
   const [user, setUser] = useState([]);

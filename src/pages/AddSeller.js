@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
+import Col from "react-bootstrap/esm/Col";
+import Row from "react-bootstrap/esm/Row";
 
 import "../App.css";
 import "../Components/Products.css";
@@ -28,9 +30,18 @@ const AddSeller = () => {
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
 
+  // const [tuotteet, setTuotteet] = useState([]);
+
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
+
+  // const changeTuotteetData = (e) => {
+  //   setTuotteet([e.target.value]);
+  //   console.log(tuotteet);
+  //   setData({ ...data, tuotteet });
+  //   console.log(data);
+  // };
 
   const changePassWordCheck = (e) => {
     setPasswordCheck({ ...passwordCheck, [e.target.name]: e.target.value });
@@ -81,21 +92,30 @@ const AddSeller = () => {
             required
             onChange={changeData}
           />
-          {/* <Form.Label>tuotteet:</Form.Label>
-          <Form.Control
-            type="text"
-            width="10px"
-            name="tuotteet"
-            onChange={changeData}
-          />
-          <Form.Label>tuotteita:</Form.Label>
-          <Form.Control
-            type="number"
-            width="10px"
-            name="tuotteita"
-            required
-            onChange={changeData}
-          /> */}
+        </Form.Group>
+
+        {/* <Form.Group>
+          <Form.Label>Tuoteryhmät</Form.Label>
+          <Row>
+            <select
+              multiple={true}
+              name="tuotteet"
+              onChange={changeTuotteetData}
+              required
+            >
+              <option value="Pussukat">Pussukat</option>
+              <option value="Laukut">Laukut</option>
+              <option value="Leivonnaiset">Leivonnaiset</option>
+              <option value="Villasukat">Villasukat</option>
+              <option value="Korut">Korut</option>
+              <option value="Sisustus">Sisustus</option>
+              <option value="Kalastus">Kalastus</option>
+              <option value="Muu">Muu</option>
+            </select>
+          </Row>
+        </Form.Group> */}
+
+        <Form.Group>
           <Form.Label>Käyttäjätunnus:</Form.Label>
           <Form.Control
             type="text"
@@ -135,7 +155,7 @@ const AddSeller = () => {
         <Button type="submit" className="addbtn" value="Send data" ref={target}>
           Lähetä
         </Button>
-        <Overlay target={target.current} placement="left" show={showPopOver}>
+        <Overlay target={target.current} placement="right" show={showPopOver}>
           {popover}
         </Overlay>
       </Form>
