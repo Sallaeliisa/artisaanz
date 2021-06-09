@@ -1,3 +1,12 @@
+.singleProduct {
+  padding: 30px 70px;
+}
+
+.singleProduct a {
+  color: #a8611f;
+  font-weight: 800;
+}
+
 .singleProduct img {
   height: 100%;
   width: 100%;
@@ -10,15 +19,6 @@
   border: none;
   margin: 2rem;
   outline: 3px solid #0d0d0d;
-}
-
-.singleProduct {
-  padding: 30px 70px;
-}
-
-.singleProduct a {
-  color: #a8611f;
-  font-weight: 800;
 }
 
 .mainImage {
@@ -53,23 +53,23 @@
 }
 
 @media (max-width: 899px) {
+ .singleProduct {
+    padding: 0px;
+    width: 900px;
+  }
+ 
   .singleProduct img {
     max-width: 1000px;
     max-height: 900px;
   }
 
-  .singleProduct {
-    padding: 0px;
-    width: 900px;
-  }
-
-  .singleProduct p {
+  .singleProduct h1 {
     width: 200px;
     text-align: center;
     margin: 0 auto;
   }
 
-  .singleProduct h1 {
+  .singleProduct p {
     width: 200px;
     text-align: center;
     margin: 0 auto;

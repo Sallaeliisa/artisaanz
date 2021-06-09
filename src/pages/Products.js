@@ -92,10 +92,10 @@ const Products = () => {
           <div className="filteredProducts">{filteredProducts}</div>
           {seller && (
             <div>
-              <button className="backbtn" onClick={() => history.goBack()}>
+              <button id="artisanbtn" onClick={() => history.goBack()}>
                 Takaisin
               </button>
-              <button className="backbtn" onClick={() => removeSeller()}>
+              <button id="artisanbtn" onClick={() => removeSeller()}>
                 Kaikkien artesaanien tuotteet
               </button>
             </div>
