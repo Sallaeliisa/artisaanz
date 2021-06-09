@@ -48,14 +48,18 @@ const Products = () => {
   }, []);
 
   const searchValueHandler = (e) => {
-    setSearchInput(e.target.value);
+    if (e.target.value === "Valitse kategoria") {
+      setSearchInput("");
+    } else {
+      setSearchInput(e.target.value);
+    }
     console.log(searchInput);
   };
 
   const removeSeller = () => {
     history.location.state = "";
     setSeller(false);
-  }
+  };
 
   const filteredProducts = productFilter.map((tuote) => {
     return (
