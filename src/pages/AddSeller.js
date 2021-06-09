@@ -37,23 +37,25 @@ const AddSeller = () => {
     e.preventDefault();
     console.log(data);
     console.log(passwordCheck);
-    if(passwordCheck.passwordCheck === data.password) {
-    axios
-      .post("https://artisaanz.herokuapp.com/seller/add", data)
-      .then(setPopOverTitle("Artesaani lisätty"))
-      .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
-      .catch((error) => {
-        setPopOverTitle("Virhe");
-        setPopOverMessage("Rekisteröinti ei onnistunut.");
-        console.log(error.response.data);
-      });
-    setShowPopOver(true);
-    e.target.reset();
-  } else {
-    setShowPopOver(true);
-    setPopOverTitle("Virhe");
-    setPopOverMessage("Tarkista, että kirjoitit saman salasanan kumpaankin kenttään.");
-  }
+    if (passwordCheck.passwordCheck === data.password) {
+      axios
+        .post("https://artisaanz.herokuapp.com/seller/add", data)
+        .then(setPopOverTitle("Artesaani lisätty"))
+        .then(setPopOverMessage("Voit nyt lisätä tuotteita myytäväksi."))
+        .catch((error) => {
+          setPopOverTitle("Virhe");
+          setPopOverMessage("Rekisteröinti ei onnistunut.");
+          console.log(error.response.data);
+        });
+      setShowPopOver(true);
+      e.target.reset();
+    } else {
+      setShowPopOver(true);
+      setPopOverTitle("Virhe");
+      setPopOverMessage(
+        "Tarkista, että kirjoitit saman salasanan kumpaankin kenttään."
+      );
+    }
   };
 
   const popover = (
@@ -101,7 +103,7 @@ const AddSeller = () => {
           />
           <Form.Label>Salasana:</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             width="10px"
             name="password"
             required
@@ -109,7 +111,7 @@ const AddSeller = () => {
           />
           <Form.Label>Salasana uudelleen:</Form.Label>
           <Form.Control
-            type="text"
+            type="password"
             width="10px"
             name="passwordCheck"
             required
@@ -127,14 +129,9 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <Button
-            type="submit"
-            className="addbtn"
-            value="Send data"
-            ref={target}
-          >
-            Lähetä
-          </Button>
+        <Button type="submit" className="addbtn" value="Send data" ref={target}>
+          Lähetä
+        </Button>
         <Overlay target={target.current} placement="left" show={showPopOver}>
           {popover}
         </Overlay>
