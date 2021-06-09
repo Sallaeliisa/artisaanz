@@ -7,7 +7,6 @@ import Col from "react-bootstrap/Col";
 import ProductsForAdmin from "../Components/ProductsForAdmin";
 
 import "../App.css";
-import Products from "./Products";
 
 const AddProduct = () => {
   const [data, setData] = useState({
@@ -50,7 +49,9 @@ const AddProduct = () => {
       <main>
         <Form onSubmit={submitData} className="form">
           <Form.Group>
-            <Form.Label htmlFor="">Lisää uusi tuote:</Form.Label>
+            <Form.Label htmlFor="">
+              VOIKO TÄN SIVUN DELETOIDA? Lisää uusi tuote:
+            </Form.Label>
             <Form.Control
               type="text"
               width="10px"

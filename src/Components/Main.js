@@ -4,7 +4,6 @@ import Landing from "../pages/Landing";
 import Products from "../pages/Products";
 import Makers from "../pages/Makers";
 import About from "../pages/About";
-//import AddProduct from "../pages/AddProduct";
 import Admin from "../pages/Admin";
 import ProductsForAdmin from "./ProductsForAdmin";
 import EditProduct from "../pages/EditProduct";
