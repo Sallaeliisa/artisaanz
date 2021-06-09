@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
 
+import "../App.css";
+import "../Components/Products.css";
+
 const AddSeller = () => {
   const [data, setData] = useState({
     nimi: "",

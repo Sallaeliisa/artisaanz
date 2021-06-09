@@ -50,13 +50,21 @@
 }
 
 .btn-primary {
+  height: 45px;
+  width: 200px;
   background-color: #583a22;
-  border-color: #583a22;
+  outline: 5px solid #583a22;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "EB Garamond", serif;
+  margin: 20px 0 20px 0;
+  font-size: 1.2rem;
 }
 
 .btn-primary:hover {
   transform: scale(1.1);
   background-color: #583a22;
+  border: 3px solid #fff;
 }
 
 .btn-primary:active {
@@ -64,7 +72,7 @@
 }
 
 @media (max-width: 899px) {
- .productCard {
+  .productCard {
     max-height: 450px;
     width: 400px;
     margin-left: 170px;
@@ -76,14 +84,13 @@
     max-height: 200px;
     padding-bottom: 10px;
   }
-  
+
   .filteredProducts {
     display: grid;
     grid-template-columns: repeat(1, 400px);
     grid-auto-rows: auto;
     grid-gap: 3rem;
   }
-  
 }
 
 @media (max-width: 576px) {
@@ -99,7 +106,7 @@
     max-height: 200px;
     padding-bottom: 10px;
   }
-  
+
   .filteredProducts {
     display: grid;
     grid-template-columns: repeat(1, 250px);
