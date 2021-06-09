@@ -60,15 +60,6 @@ const About = () => {
               required
             />
           </Form.Group>
-          <Form.Group>
-            <Form.Label htmlFor="">Receiver:</Form.Label>
-            <Form.Control
-              type="email"
-              width="10px"
-              name="email"
-              id="receiver"
-            />
-          </Form.Group>
 
           <Form.Group>
             <Form.Label htmlFor="">Subject:</Form.Label>
