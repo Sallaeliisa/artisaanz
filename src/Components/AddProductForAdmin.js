@@ -156,7 +156,7 @@ const AddProductForAdmin = () => {
           >
             Lisää tuote
           </Button>
-          <Overlay target={target.current} placement="left" show={showPopOver}>
+          <Overlay target={target.current} placement="right" show={showPopOver}>
             {popover}
           </Overlay>
         </Form>

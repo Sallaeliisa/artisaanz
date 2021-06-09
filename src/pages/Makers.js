@@ -7,7 +7,7 @@ import Spinner from "react-bootstrap/Spinner";
 const Makers = () => {
   const [maker, setMaker] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState("");
+  const [tuotteet, setTuote] = useState([]);
 
   useEffect(() => {
     axios
@@ -16,15 +16,20 @@ const Makers = () => {
     setLoading(false);
   }, []);
 
-  if (maker.id === 3) {
-    setProducts("Tuotteet: kassit, pussukat, käsilaukut");
-  }
-  if (maker.id === 2) {
-    setProducts("Tuotteet: villasukat");
-  }
-  if (maker.id === 1) {
-    setProducts("Tuotteet: leivonnaiset");
-  }
+  useEffect(() => {
+    axios
+      .get("https://artisaanz.herokuapp.com/product/all/")
+      .then((response) => setTuote(response.data));
+  }, []);
+
+  // const haeKategoriat = (nimi) => {
+  //   let kategoriat = tuotteet.map((tuote) => {
+  //     if (tuote.includes(nimi)) {
+  //       return tuote.kategoria;
+  //     }
+  //   });
+  //   return kategoriat[0];
+  // };
 
   const makers = maker.map((maker) => {
     if (maker.id === 3) {
@@ -70,7 +75,7 @@ const Makers = () => {
           <Card.Body>
             <Card.Title>{maker.nimi}</Card.Title>
             <Card.Subtitle className="mb-2 text-muted">
-              Tuotteet: {maker.tuotteet}
+              Tuotteryhmät tulee näkymään tässä
             </Card.Subtitle>
             <Card.Text>{maker.esittely}</Card.Text>
             <Link

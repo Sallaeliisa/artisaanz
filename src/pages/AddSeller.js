@@ -11,7 +11,7 @@ const AddSeller = () => {
   const [data, setData] = useState({
     nimi: "",
     esittely: "",
-    tuotteet: [],
+    // tuotteet: [],
     // tuotteita: "",
     username: "",
     password: "",
@@ -27,18 +27,18 @@ const AddSeller = () => {
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
 
-  const [tuotteet, setTuotteet] = useState([]);
+  // const [tuotteet, setTuotteet] = useState([]);
 
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
-    //console.log(data);
   };
-  const changeTuotteetData = (e) => {
-    setTuotteet([e.target.value]);
-    console.log(tuotteet);
-    setData({ ...data, tuotteet });
-    console.log(data);
-  };
+
+  // const changeTuotteetData = (e) => {
+  //   setTuotteet([e.target.value]);
+  //   console.log(tuotteet);
+  //   setData({ ...data, tuotteet });
+  //   console.log(data);
+  // };
 
   const changePassWordCheck = (e) => {
     setPasswordCheck({ ...passwordCheck, [e.target.name]: e.target.value });
@@ -90,33 +90,8 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        {/* 
-        <Form.Group multiple={true}>
-          <Form.Label>Tuotteet:</Form.Label>
-          <Form.Check label="Pussukat" value="Pussukat" />
-          <Form.Check value="Laukut" label="Laukut" />
-          <Form.Check type="checkbox" value="Leivokset" label="Leivonnaiset" />
-          <Form.Check type="checkbox" value="Villasukat" label="Villasukat" />
-          <Form.Check type="checkbox" value="Korut" label="Korut" />
-          <Form.Check type="checkbox" value="Sisustus" label="Sisustus" />
-          <Form.Check type="checkbox" value="Kalastus" label="Kalastus" />
-          <Form.Check type="checkbox" value="Muu" label="Muu" />
 
-          <Form.Check
-            type="checkbox"
-            label="second radio"
-            name="formHorizontalRadios"
-            id="formHorizontalRadios2"
-          />
-          <Form.Check
-            value="pussukat"
-            type="checkbox"
-            label="third radio"
-            name="formHorizontalRadios"
-            id="formHorizontalRadios3"
-          />
-        </Form.Group> */}
-        <Form.Group>
+        {/* <Form.Group>
           <Form.Label>Tuoteryhmät</Form.Label>
           <Row>
             <select
@@ -135,7 +110,7 @@ const AddSeller = () => {
               <option value="Muu">Muu</option>
             </select>
           </Row>
-        </Form.Group>
+        </Form.Group> */}
 
         <Form.Group>
           <Form.Label>Käyttäjätunnus:</Form.Label>
@@ -177,7 +152,7 @@ const AddSeller = () => {
         <Button type="submit" className="addbtn" value="Send data" ref={target}>
           Lähetä
         </Button>
-        <Overlay target={target.current} placement="left" show={showPopOver}>
+        <Overlay target={target.current} placement="right" show={showPopOver}>
           {popover}
         </Overlay>
       </Form>

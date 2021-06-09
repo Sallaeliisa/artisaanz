@@ -38,6 +38,7 @@
 
 .btn-primary:hover {
   transform: scale(1.1);
+  background-color: #a8611f;
 }
 
 @media (max-width: 899px) {
