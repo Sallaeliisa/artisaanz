@@ -13,6 +13,11 @@ const AddSeller = () => {
     // tuotteita: "",
     username: "",
     password: "",
+    passwordCheck: "",
+  });
+
+  const [passwordCheck, setPasswordCheck] = useState({
+    passwordCheck: "",
   });
 
   const [showPopOver, setShowPopOver] = useState(false);
@@ -24,9 +29,15 @@ const AddSeller = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  const changePassWordCheck = (e) => {
+    setPasswordCheck({ ...passwordCheck, [e.target.name]: e.target.value });
+  };
+
   const submitData = (e) => {
     e.preventDefault();
     console.log(data);
+    console.log(passwordCheck);
+    if(passwordCheck.passwordCheck === data.password) {
     axios
       .post("https://artisaanz.herokuapp.com/seller/add", data)
       .then(setPopOverTitle("Artesaani lisätty"))
@@ -38,6 +49,11 @@ const AddSeller = () => {
       });
     setShowPopOver(true);
     e.target.reset();
+  } else {
+    setShowPopOver(true);
+    setPopOverTitle("Virhe");
+    setPopOverMessage("Tarkista, että kirjoitit saman salasanan kumpaankin kenttään.");
+  }
   };
 
   const popover = (
@@ -91,14 +107,14 @@ const AddSeller = () => {
             required
             onChange={changeData}
           />
-          {/* <Form.Label>Salasana uudelleen:</Form.Label>
+          <Form.Label>Salasana uudelleen:</Form.Label>
           <Form.Control
             type="text"
             width="10px"
             name="passwordCheck"
             required
-            onChange={changeData}
-          /> */}
+            onChange={changePassWordCheck}
+          />
         </Form.Group>
         <Form.Group>
           <Form.Label htmlFor="">Esittelyteksti:</Form.Label>
