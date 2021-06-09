@@ -19,6 +19,8 @@ const SearchBoxDropdown = ({ search }) => {
           <option>Villasukat</option>
           <option>Korut</option>
           <option>Sisustus</option>
+          <option>Kalastus</option>
+          <option>Muu</option>
         </Form.Control>
       </div>
       {/* 

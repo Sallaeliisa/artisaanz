@@ -67,6 +67,8 @@ const AddProduct = () => {
             <option value="Villasukat">Villasukat</option>
             <option value="Korut">Korut</option>
             <option value="Sisustus">Sisustus</option>
+            <option value="Kalastus">Kalastus</option>
+            <option value="Muu">Muu</option>
           </select>
           <div>
             <h1> </h1>
