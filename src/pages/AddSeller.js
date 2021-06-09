@@ -4,12 +4,14 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
+import Col from "react-bootstrap/esm/Col";
+import Row from "react-bootstrap/esm/Row";
 
 const AddSeller = () => {
   const [data, setData] = useState({
     nimi: "",
     esittely: "",
-    // tuotteet: [],
+    tuotteet: [],
     // tuotteita: "",
     username: "",
     password: "",
@@ -20,8 +22,17 @@ const AddSeller = () => {
   const [popOverMessage, setPopOverMessage] = useState();
   const target = useRef(null);
 
+  const [tuotteet, setTuotteet] = useState([]);
+
   const changeData = (e) => {
     setData({ ...data, [e.target.name]: e.target.value });
+    //console.log(data);
+  };
+  const changeTuotteetData = (e) => {
+    setTuotteet([e.target.value]);
+    console.log(tuotteet);
+    setData({ ...data, tuotteet });
+    console.log(data);
   };
 
   const submitData = (e) => {
@@ -60,21 +71,55 @@ const AddSeller = () => {
             required
             onChange={changeData}
           />
-          {/* <Form.Label>tuotteet:</Form.Label>
-          <Form.Control
-            type="text"
-            width="10px"
-            name="tuotteet"
-            onChange={changeData}
+        </Form.Group>
+        {/* 
+        <Form.Group multiple={true}>
+          <Form.Label>Tuotteet:</Form.Label>
+          <Form.Check label="Pussukat" value="Pussukat" />
+          <Form.Check value="Laukut" label="Laukut" />
+          <Form.Check type="checkbox" value="Leivokset" label="Leivonnaiset" />
+          <Form.Check type="checkbox" value="Villasukat" label="Villasukat" />
+          <Form.Check type="checkbox" value="Korut" label="Korut" />
+          <Form.Check type="checkbox" value="Sisustus" label="Sisustus" />
+          <Form.Check type="checkbox" value="Kalastus" label="Kalastus" />
+          <Form.Check type="checkbox" value="Muu" label="Muu" />
+
+          <Form.Check
+            type="checkbox"
+            label="second radio"
+            name="formHorizontalRadios"
+            id="formHorizontalRadios2"
           />
-          <Form.Label>tuotteita:</Form.Label>
-          <Form.Control
-            type="number"
-            width="10px"
-            name="tuotteita"
-            required
-            onChange={changeData}
-          /> */}
+          <Form.Check
+            value="pussukat"
+            type="checkbox"
+            label="third radio"
+            name="formHorizontalRadios"
+            id="formHorizontalRadios3"
+          />
+        </Form.Group> */}
+        <Form.Group>
+          <Form.Label>Tuoteryhmät</Form.Label>
+          <Row>
+            <select
+              multiple={true}
+              name="tuotteet"
+              onChange={changeTuotteetData}
+              required
+            >
+              <option value="Pussukat">Pussukat</option>
+              <option value="Laukut">Laukut</option>
+              <option value="Leivonnaiset">Leivonnaiset</option>
+              <option value="Villasukat">Villasukat</option>
+              <option value="Korut">Korut</option>
+              <option value="Sisustus">Sisustus</option>
+              <option value="Kalastus">Kalastus</option>
+              <option value="Muu">Muu</option>
+            </select>
+          </Row>
+        </Form.Group>
+
+        <Form.Group>
           <Form.Label>Käyttäjätunnus:</Form.Label>
           <Form.Control
             type="text"
@@ -111,14 +156,9 @@ const AddSeller = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <Button
-            type="submit"
-            className="addbtn"
-            value="Send data"
-            ref={target}
-          >
-            Lähetä
-          </Button>
+        <Button type="submit" className="addbtn" value="Send data" ref={target}>
+          Lähetä
+        </Button>
         <Overlay target={target.current} placement="left" show={showPopOver}>
           {popover}
         </Overlay>

@@ -57,60 +57,6 @@ const Makers = () => {
           </Card.Body>
         </Card>
       );
-    } else if (maker.id === 2) {
-      return (
-        <Card className="makersCard" key={maker.id}>
-          {loading === true && (
-            <Spinner
-              className="productSpinner"
-              animation="border"
-              variant="secondary"
-            />
-          )}
-          <Card.Body>
-            <Card.Title>{maker.nimi}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Tuotteet: villasukat
-            </Card.Subtitle>
-            <Card.Text>{maker.esittely}</Card.Text>
-            <Link
-              to={{
-                pathname: "/tuotteet",
-                state: { seller: maker.nimi },
-              }}
-            >
-              Artesaanin tuotteet
-            </Link>
-          </Card.Body>
-        </Card>
-      );
-    } else if (maker.id === 1) {
-      return (
-        <Card className="makersCard" key={maker.id}>
-          {loading === true && (
-            <Spinner
-              className="productSpinner"
-              animation="border"
-              variant="secondary"
-            />
-          )}
-          <Card.Body>
-            <Card.Title>{maker.nimi}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
-              Tuotteet: leivonnaiset
-            </Card.Subtitle>
-            <Card.Text>{maker.esittely}</Card.Text>
-            <Link
-              to={{
-                pathname: "/tuotteet",
-                state: { seller: maker.nimi },
-              }}
-            >
-              Artesaanin tuotteet
-            </Link>
-          </Card.Body>
-        </Card>
-      );
     } else {
       return (
         <Card className="makersCard" key={maker.id}>
@@ -123,6 +69,9 @@ const Makers = () => {
           )}
           <Card.Body>
             <Card.Title>{maker.nimi}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">
+              Tuotteet: {maker.tuotteet}
+            </Card.Subtitle>
             <Card.Text>{maker.esittely}</Card.Text>
             <Link
               to={{

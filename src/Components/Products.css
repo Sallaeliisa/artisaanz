@@ -36,6 +36,10 @@
   grid-gap: 3rem;
 }
 
+.btn-primary:hover {
+  transform: scale(1.1);
+}
+
 @media (max-width: 899px) {
   .filteredProducts {
     display: grid;
