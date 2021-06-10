@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import Form from "react-bootstrap/Form";
+import Overlay from "react-bootstrap/Overlay";
+import Popover from "react-bootstrap/Popover";
 
 import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
@@ -11,6 +13,10 @@ const Login = () => {
   const [logged, setLogged] = useState();
   const history = useHistory();
   const [user, setUser] = useState();
+  const [showPopOver, setShowPopOver] = useState(false);
+  const [popOverTitle, setPopOverTitle] = useState();
+  const [popOverMessage, setPopOverMessage] = useState();
+  const target = useRef(null);
 
   const loginTry = (e) => {
     e.preventDefault();
@@ -19,6 +25,9 @@ const Login = () => {
       <Redirect push to="/myyjälle" />;
       setLogged(true);
     } else {
+      setPopOverTitle("Kirjautuminen epäonnistui");
+      setPopOverMessage("Virheellinen käyttäjätunnus tai salasana.");
+      setShowPopOver(true);
       console.log("incorrect username or password");
       console.log(
         "username should be: " +
@@ -49,6 +58,13 @@ const Login = () => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  const popover = (
+    <Popover id="popover-basic">
+      <Popover.Title as="h3">{popOverTitle}</Popover.Title>
+      <Popover.Content>{popOverMessage}</Popover.Content>
+    </Popover>
+  );
+
   return (
     <>
       <Form onSubmit={loginTry}>
@@ -74,9 +90,13 @@ const Login = () => {
             onChange={changeData}
           />
         </Form.Group>
-        <button type="submit" value="Send data" id="backbtn">
+        <button type="submit" value="Send data" id="backbtn" ref={target}>
           Kirjaudu sisään/login
         </button>
+        <Overlay target={target.current} placement="bottom" show={showPopOver} rootClose
+        onHide={() => setShowPopOver(false)}>
+          {popover}
+        </Overlay>
       </Form>
       {logged && (
         <Redirect
