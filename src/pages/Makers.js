@@ -92,12 +92,7 @@ const Makers = () => {
     }
   });
 
-  return (
-    <main className="makers">
-      {makers}
-      <p>Muutos!</p>
-    </main>
-  );
+  return <main className="makers">{makers}</main>;
 };
 
 export default Makers;
