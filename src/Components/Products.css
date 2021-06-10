@@ -37,7 +37,6 @@
   grid-gap: 3rem;
 }
 
-
 #artisanbtn {
   height: 45px;
   width: 300px;
@@ -64,7 +63,6 @@
   }
 }
 
-
 .btn-primary {
   height: 45px;
   width: 200px;
@@ -85,6 +83,33 @@
 
 .btn-primary:active {
   background-color: #583a22;
+}
+
+.btn-check:active + .btn-primary,
+.btn-check:checked + .btn-primary,
+.btn-primary.active,
+.btn-primary:active,
+.show > .btn-primary.dropdown-toggle {
+  background-color: #583a22;
+  box-shadow: 0 0 0 0.25rem (#333);
+  border-color: #fff;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  background-color: #583a22;
+  box-shadow: 0 0 0 0.25rem (#333);
+  border-color: #fff;
+}
+.btn-check:active + .btn-primary:focus,
+.btn-check:checked + .btn-primary:focus,
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.25rem #333;
+}
+.btn-check:focus + .btn-primary,
+.btn-primary:focus {
+  box-shadow: 0 0 0 0.25rem #333;
 }
 
 @media (max-width: 899px) {

@@ -44,9 +44,9 @@ const Makers = () => {
           )}
           <Card.Body>
             <Card.Title>{maker.nimi}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
+            {/* <Card.Subtitle className="mb-2 text-muted">
               Tuotteet: kassit, pussukat, käsilaukut
-            </Card.Subtitle>
+            </Card.Subtitle> */}
             <Card.Text>{maker.esittely}</Card.Text>
             <Link
               to={{
@@ -74,9 +74,9 @@ const Makers = () => {
           )}
           <Card.Body>
             <Card.Title>{maker.nimi}</Card.Title>
-            <Card.Subtitle className="mb-2 text-muted">
+            {/* <Card.Subtitle className="mb-2 text-muted">
               Tuotteryhmät tulee näkymään tässä
-            </Card.Subtitle>
+            </Card.Subtitle> */}
             <Card.Text>{maker.esittely}</Card.Text>
             <Link
               to={{
