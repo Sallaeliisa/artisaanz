@@ -11,7 +11,7 @@ const Makers = () => {
 
   useEffect(() => {
     axios
-      .get("https://artisaanz.herokuapp.com/seller/all/")
+      .get("https://artisaanz.herokuapp.com/seller/all/:splat 200!")
       .then((response) => setMaker(response.data));
     setLoading(false);
   }, []);
