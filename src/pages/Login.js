@@ -3,6 +3,7 @@ import axios from "axios";
 import Form from "react-bootstrap/Form";
 import Overlay from "react-bootstrap/Overlay";
 import Popover from "react-bootstrap/Popover";
+import Row from "react-bootstrap/Row";
 
 import { useHistory } from "react-router-dom";
 import { Redirect } from "react-router";
@@ -67,7 +68,7 @@ const Login = () => {
 
   return (
     <>
-      <Form onSubmit={loginTry}>
+      <Form onSubmit={loginTry} className="signIn">
         <Form.Group>
           <Form.Label htmlFor="">Username:</Form.Label>
           <Form.Control
@@ -77,6 +78,7 @@ const Login = () => {
             maxLength="30"
             placeholder="example"
             onChange={changeData}
+            className="loginInputWidth"
           />
         </Form.Group>
         <Form.Group>
@@ -87,14 +89,20 @@ const Login = () => {
             name="password"
             maxLength="30"
             placeholder="secret"
+            className="loginInputWidth"
             onChange={changeData}
           />
         </Form.Group>
-        <button type="submit" value="Send data" id="backbtn" ref={target}>
+        <button type="submit" value="Send data" id="loginbtn" ref={target}>
           Kirjaudu sisään/login
         </button>
-        <Overlay target={target.current} placement="bottom" show={showPopOver} rootClose
-        onHide={() => setShowPopOver(false)}>
+        <Overlay
+          target={target.current}
+          placement="bottom"
+          show={showPopOver}
+          rootClose
+          onHide={() => setShowPopOver(false)}
+        >
           {popover}
         </Overlay>
       </Form>

@@ -51,13 +51,41 @@
   max-width: 80%;
   margin: 30px 100px;
 }
+/******login page margin*****/
+.signIn {
+  margin-top: 10vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+#loginbtn {
+  margin-top: 3rem;
+  height: 40px;
+  width: 200px;
+  background-color: #583a22;
+  outline: 5px solid #583a22;
+  border: 3px solid #fff;
+  color: #fff;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.5rem;
+}
+
+#loginbtn:hover {
+  height: 40px;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #583a22;
+  color: #583a22;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
 
 @media (max-width: 899px) {
- .singleProduct {
+  .singleProduct {
     padding: 0px;
     width: 900px;
   }
- 
+
   .singleProduct img {
     max-width: 1000px;
     max-height: 900px;

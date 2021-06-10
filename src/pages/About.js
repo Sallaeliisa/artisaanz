@@ -18,11 +18,11 @@ const About = () => {
           world has been sitting in home the past year, and so have we in
           Finland also done. Some of us have been trying to pick up new hobbies,
           or refreshen old skills. We started to think that all of us know
-          someone who is making awesome handcrafts. Some artisaans are
-          self-learned artists of their own life, where as some of the artisaans
-          are doing handcrafts for hoping to support themselves. No matter what
-          the reason is, all of the handcrafts are made with love and we try to
-          find "home" for them.
+          someone who is making awesome handcrafts. Some artisans hoping to
+          support themselves with their products, some are doing them just for
+          fun. No matter what the reason is, all of the handcrafts are made with
+          love. You can be sure you'll receive an unique product each time you
+          support a artisan by ordering through our page.
         </p>
         <p>
           This platform is also our summer project for school. We have used
@@ -34,7 +34,9 @@ const About = () => {
           Next phase for this platform is putting our artisans behind
           registeration, so that only correct person has access for modifying
           and adding or deleting products. Also we will build actual shopping
-          chart.{" "}
+          cart.{" "}
+        </p>
+        <p>
           <div className="bold">
             Until then, if you find some handcraft you fell in love and want to
             purchase it, feel free to contact us with below contact form so we

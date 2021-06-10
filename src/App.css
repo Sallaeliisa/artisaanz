@@ -103,6 +103,13 @@ input {
   margin: 20px 0 20px 0;
   font-size: 1.2rem;
 }
+/***navigation***/
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #583a22;
+}
 
 /*******login page****/
 .hidden {
