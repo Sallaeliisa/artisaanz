@@ -92,12 +92,7 @@ const Makers = () => {
     }
   });
 
-  return (
-    <main className="makers">
-      <p>testi</p>
-      {makers}
-    </main>
-  );
+  return <main className="makers">{makers}</main>;
 };
 
 export default Makers;
