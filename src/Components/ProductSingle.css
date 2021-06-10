@@ -79,6 +79,12 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.modify {
+  text-decoration: none;
+}
+a.modify {
+  color: #767f86;
+}
 
 @media (max-width: 899px) {
   .singleProduct {

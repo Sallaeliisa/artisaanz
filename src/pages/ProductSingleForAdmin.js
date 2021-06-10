@@ -9,8 +9,6 @@ import Popover from "react-bootstrap/Popover";
 import Modal from "react-bootstrap/Modal";
 import "../Components/ProductSingle.css";
 import Button from "react-bootstrap/Button";
-import EditProduct from "./EditProduct";
-import { Switch, Route } from "react-router-dom";
 
 const ProductSingleForAdmin = () => {
   const [tuotteet, setTuotteet] = useState();
@@ -121,7 +119,9 @@ const ProductSingleForAdmin = () => {
           Takaisin
         </button>
         <button className="backbtn">
-          <Link to={`/muokkaa/${tuotteet.id}`}>Muokkaa</Link>
+          <Link to={`/muokkaa/${tuotteet.id}`} className="modify">
+            Muokkaa
+          </Link>
         </button>
         <button className="backbtn" ref={target} onClick={handleShowModal}>
           Poista tuote
@@ -131,22 +131,25 @@ const ProductSingleForAdmin = () => {
         </Overlay>
 
         <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header>
-          <Modal.Title>Vahvista poisto</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>Haluatko varmasti poistaa tämän tuotteen?</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Takaisin
-          </Button>
-          <Button variant="primary" onClick={() => {
-            removeProduct();
-            handleCloseModal();
-            }}>
-            Poista
-          </Button>
-        </Modal.Footer>
-      </Modal>
+          <Modal.Header>
+            <Modal.Title>Vahvista poisto</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Haluatko varmasti poistaa tämän tuotteen?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseModal}>
+              Takaisin
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                removeProduct();
+                handleCloseModal();
+              }}
+            >
+              Poista
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
