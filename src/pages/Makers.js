@@ -7,7 +7,7 @@ import Spinner from "react-bootstrap/Spinner";
 const Makers = () => {
   const [maker, setMaker] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [tuotteet, setTuote] = useState([]);
+  // const [tuotteet, setTuote] = useState([]);
 
   useEffect(() => {
     axios
@@ -16,11 +16,11 @@ const Makers = () => {
     setLoading(false);
   }, []);
 
-  useEffect(() => {
-    axios
-      .get("https://artisaanz.herokuapp.com/product/all/")
-      .then((response) => setTuote(response.data));
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://artisaanz.herokuapp.com/product/all/")
+  //     .then((response) => setTuote(response.data));
+  // }, []);
 
   // const haeKategoriat = (nimi) => {
   //   let kategoriat = tuotteet.map((tuote) => {
