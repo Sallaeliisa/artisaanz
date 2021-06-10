@@ -83,7 +83,8 @@
   text-decoration: none;
 }
 a.modify {
-  color: #767f86;
+  color: #000;
+  font-weight: 400;
 }
 
 @media (max-width: 899px) {
