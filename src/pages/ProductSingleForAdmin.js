@@ -115,7 +115,7 @@ const ProductSingleForAdmin = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="adminbtn" onClick={() => history.goadmin()}>
+        <button className="adminbtn" onClick={() => history.goBack()}>
           Takaisin
         </button>
         <button className="adminbtn">

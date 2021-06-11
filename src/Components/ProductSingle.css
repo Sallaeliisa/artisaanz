@@ -46,6 +46,12 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.adminbtn {
+  height: 30px;
+  width: 150px;
+  font-family: "Dosis", sans-serif;
+  font-size: 1.5rem;
+}
 .adminbtn:hover {
   transform: scale(1.1);
 }
