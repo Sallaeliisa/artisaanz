@@ -144,6 +144,8 @@ const AddProductForAdmin = () => {
             <Form.Control
               type="number"
               name="hinta"
+              min="1"
+              max="999"
               required
               onChange={changeData}
             />
