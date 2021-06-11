@@ -46,6 +46,9 @@
   font-size: 1.5rem;
   font-weight: 600;
 }
+.adminbtn:hover {
+  transform: scale(1.1);
+}
 
 .popup img {
   max-width: 80%;

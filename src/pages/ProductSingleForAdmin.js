@@ -115,15 +115,15 @@ const ProductSingleForAdmin = () => {
         </p>
         <p>Hinta: {tuotteet.hinta} €</p>
         <p>Kategoria: {tuotteet.kategoria}</p>
-        <button className="backbtn" onClick={() => history.goBack()}>
+        <button className="adminbtn" onClick={() => history.goadmin()}>
           Takaisin
         </button>
-        <button className="backbtn">
+        <button className="adminbtn">
           <Link to={`/muokkaa/${tuotteet.id}`} className="modify">
             Muokkaa
           </Link>
         </button>
-        <button className="backbtn" ref={target} onClick={handleShowModal}>
+        <button className="adminbtn" ref={target} onClick={handleShowModal}>
           Poista tuote
         </button>
         <Overlay target={target.current} placement="bottom" show={showPopOver}>
